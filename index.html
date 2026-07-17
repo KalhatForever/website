@@ -1,483 +1,330 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Newns — Digital Assets & Capital Markets</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-dark: #111111;
-            --bg-card: #1a1a1a;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
-            --accent: #6366f1;
-            --accent-hover: #818cf8;
-            --border: rgba(255, 255, 255, 0.1);
-        }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Substrate Advisory</title>
+<meta name="description" content="Independent advisory in regulated digital assets and financial market infrastructure. Substrate works with exchanges, central securities depositories, banks, digital asset firms and regulators.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FCFCFB;
+  --ink:#16161A;
+  --grey:#857F76;
+  --muted:#55524B;
+  --rule:#E3E1DC;
+  --display:"EB Garamond",Georgia,serif;
+  --utility:"IBM Plex Sans",system-ui,sans-serif;
+  --measure:34rem;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--utility);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:60rem;margin:0 auto;padding:0 2rem}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* the lockup: serif wordmark over letterspaced caps, taken from the mark itself */
+.eyebrow{
+  font-family:var(--utility);
+  font-size:.72rem;
+  font-weight:400;
+  letter-spacing:.34em;
+  text-transform:uppercase;
+  color:var(--grey);
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+/* masthead */
+.masthead{padding:3.5rem 0 0}
+.mark{display:block;text-decoration:none;color:inherit;width:max-content}
+.mark .word{font-family:var(--display);font-size:2rem;line-height:1;letter-spacing:-.005em}
+.mark .eyebrow{display:block;margin-top:.45rem;padding-left:.2em;font-size:.62rem;letter-spacing:.42em}
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-primary);
-            line-height: 1.6;
-            min-height: 100vh;
-        }
+nav{margin-top:2.75rem;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+nav ul{display:flex;flex-wrap:wrap;gap:2rem;list-style:none;padding:.85rem 0}
+nav a{
+  font-size:.8rem;letter-spacing:.06em;color:var(--muted);
+  text-decoration:none;transition:color .2s ease;
+}
+nav a:hover,nav a:focus-visible{color:var(--ink)}
 
-        ::selection {
-            background: var(--accent);
-            color: white;
-        }
+/* hero */
+.hero{padding:7rem 0 6.5rem}
+.hero h1{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:clamp(2.1rem,4.6vw,3.35rem);
+  line-height:1.16;
+  letter-spacing:-.012em;
+  max-width:22ch;
+}
+.hero p{margin-top:2rem;max-width:var(--measure);color:var(--muted);font-size:1.06rem}
+.hero .cta{margin-top:2.75rem}
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+.link{
+  display:inline-block;
+  font-size:.82rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink);
+  text-decoration:none;
+  border-bottom:1px solid var(--ink);
+  padding-bottom:.35rem;
+  transition:opacity .2s ease;
+}
+.link:hover,.link:focus-visible{opacity:.55}
 
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(17, 17, 17, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-        }
+/* sections */
+section{border-top:1px solid var(--rule);padding:5.5rem 0}
+.head{margin-bottom:3.5rem}
+.head h2{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:clamp(1.6rem,2.6vw,2.1rem);
+  line-height:1.2;
+  margin-top:.5rem;
+  letter-spacing:-.008em;
+}
+.standfirst{margin-top:1.25rem;max-width:var(--measure);color:var(--muted)}
 
-        .logo {
-            font-family: 'Newsreader', serif;
-            font-size: 1.25rem;
-            font-weight: 500;
-            letter-spacing: -0.02em;
-        }
+/* entries: a definition structure, not cards */
+.entries{border-top:1px solid var(--rule)}
+.entry{
+  border-bottom:1px solid var(--rule);
+  padding:2.25rem 0;
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:2.5rem;
+}
+.entry h3{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:1.22rem;
+  line-height:1.3;
+}
+.entry .meta{
+  display:block;
+  margin-top:.5rem;
+  font-family:var(--utility);
+  font-size:.72rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--grey);
+}
+.entry p{color:var(--muted);max-width:var(--measure)}
 
-        .logo span {
-            color: var(--text-secondary);
-        }
+/* principal */
+.principal{display:grid;grid-template-columns:14rem 1fr;gap:3.5rem;align-items:start}
+.principal img{width:100%;height:auto;display:block;filter:saturate(.9)}
+.principal .name{font-family:var(--display);font-size:1.5rem;margin-bottom:1.25rem}
+.principal p{color:var(--muted);max-width:var(--measure)}
 
-        nav {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
+/* contact */
+.contact p{max-width:var(--measure);color:var(--muted)}
+.contact .actions{margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:2.5rem;align-items:center}
+.contact a.mail{
+  font-family:var(--display);
+  font-size:1.15rem;
+  color:var(--ink);
+  text-decoration:none;
+  border-bottom:1px solid var(--rule);
+  padding-bottom:.25rem;
+  transition:border-color .2s ease;
+}
+.contact a.mail:hover,.contact a.mail:focus-visible{border-color:var(--ink)}
 
-        nav a {
-            color: var(--text-secondary);
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            transition: color 0.2s ease;
-        }
+/* footer */
+footer{border-top:1px solid var(--rule);padding:3rem 0 4rem}
+footer p{font-size:.78rem;line-height:1.8;color:var(--grey);max-width:38rem}
+footer p+p{margin-top:.75rem}
 
-        nav a:hover {
-            color: var(--text-primary);
-        }
+a:focus-visible,nav a:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:1px}
 
-        .mode-toggle {
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            background: none;
-            border: 1px solid var(--border);
-            padding: 0.4rem 0.8rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
+/* reveal */
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
 
-        .mode-toggle:hover {
-            border-color: var(--text-secondary);
-            color: var(--text-primary);
-        }
-
-        /* Hero */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 8rem 2rem 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 4rem;
-        }
-
-        .hero-content {
-            flex: 1;
-        }
-
-        .hero-label {
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 {
-            font-family: 'Newsreader', serif;
-            font-size: clamp(3rem, 6vw, 4.5rem);
-            font-weight: 400;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.03em;
-        }
-
-        .hero-tagline {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            max-width: 480px;
-            line-height: 1.7;
-        }
-
-        .hero-tagline a {
-            color: var(--accent);
-            transition: color 0.2s ease;
-        }
-
-        .hero-tagline a:hover {
-            color: var(--accent-hover);
-        }
-
-        .hero-image {
-            flex: 0 0 320px;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 8px;
-            filter: grayscale(10%);
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.65rem;
-            font-weight: 600;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-        }
-
-        /* Sections */
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-label {
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            margin-bottom: 2.5rem;
-        }
-
-        .section-label::before {
-            content: '// ';
-            opacity: 0.5;
-        }
-
-        /* Work Cards */
-        .work-grid {
-            display: grid;
-            gap: 2rem;
-        }
-
-        .work-card {
-            display: grid;
-            grid-template-columns: 100px 1fr;
-            gap: 2rem;
-            padding: 2rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            transition: border-color 0.2s ease;
-        }
-
-        .work-card:hover {
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .work-logo {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-        }
-
-        .work-card h3 {
-            font-family: 'Newsreader', serif;
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin-bottom: 0.75rem;
-        }
-
-        .work-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 1.25rem;
-        }
-
-        .work-meta {
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 0.75rem;
-        }
-
-        .work-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.6rem 1.25rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-hover);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-primary);
-            border: 1px solid var(--border);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--text-secondary);
-        }
-
-        /* About */
-        .about-content {
-            max-width: 720px;
-        }
-
-        .about-content p {
-            font-size: 1.05rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 1.25rem;
-        }
-
-        .about-content a {
-            color: var(--accent);
-        }
-
-        .about-content a:hover {
-            color: var(--accent-hover);
-        }
-
-        /* Footer */
-        footer {
-            padding: 3rem 2rem;
-            border-top: 1px solid var(--border);
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-links a {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: color 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-primary);
-        }
-
-        .footer-copyright {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-        }
-
-        .footer-copyright span {
-            opacity: 0.5;
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                gap: 3rem;
-            }
-
-            .hero-tagline {
-                max-width: 100%;
-            }
-
-            .hero-image {
-                flex: none;
-                width: 100%;
-                max-width: 280px;
-            }
-
-            .work-card {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .work-logo {
-                margin: 0 auto;
-            }
-
-            .work-links {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 600px) {
-            header {
-                padding: 1rem;
-            }
-
-            nav {
-                gap: 1rem;
-            }
-
-            nav a {
-                font-size: 0.65rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            footer {
-                flex-direction: column;
-                gap: 1.5rem;
-                text-align: center;
-            }
-        }
-    </style>
+@media (max-width:780px){
+  .wrap{padding:0 1.5rem}
+  .hero{padding:4.5rem 0 4rem}
+  section{padding:4rem 0}
+  .head{margin-bottom:2.5rem}
+  .entry{grid-template-columns:1fr;gap:1rem;padding:2rem 0}
+  .principal{grid-template-columns:1fr;gap:2rem}
+  .principal img{max-width:12rem}
+  nav ul{gap:1.25rem}
+}
+</style>
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">DN<span>_</span></a>
-        <nav>
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
-            <a href="https://www.linkedin.com/in/davidnewns/" target="_blank">LinkedIn</a>
-            <a href="mailto:david.newns@sdx.com">Contact</a>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <p class="hero-label">Digital Assets & Capital Markets</p>
-            <h1>David Newns</h1>
-            <p class="hero-tagline">
-                25+ years building mission-critical financial market infrastructure. Pioneering the institutional adoption of digital assets and blockchain technology. Former CEO of <a href="https://www.sdx.com/" target="_blank">SIX Digital Exchange</a>, <a href="https://www.currenex.com/" target="_blank">Currenex</a> and <a href="https://www.fxconnect.com/" target="_blank">FXConnect</a>.
-            </p>
-        </div>
-        <div class="hero-image">
-            <img src="headshot.png" alt="David Newns">
-        </div>
-        <span class="scroll-indicator">Scroll</span>
-    </section>
+<header class="masthead">
+  <div class="wrap">
+    <a class="mark" href="#top">
+      <span class="word">Substrate</span>
+      <span class="eyebrow">Advisory</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#mandates">Current mandates</a></li>
+        <li><a href="#record">Track record</a></li>
+        <li><a href="#principal">The principal</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-    <section id="work">
-        <p class="section-label">My Work</p>
-        <div class="work-grid">
-            <div class="work-card">
-                <img src="https://www.sdx.com/wp-content/themes/sdx/images/logo.svg" alt="SDX" class="work-logo" style="filter: brightness(0) invert(1);">
-                <div>
-                    <h3>SIX Digital Exchange</h3>
-                    <p class="work-meta">Head of SDX (2021-2025)</p>
-                    <p>Led the world's first fully regulated blockchain-based financial market infrastructure. Built an integrated platform for issuance, trading, settlement, servicing, and custody of digital assets. Achieved industry firsts including digital bond issuance, securities settlement on wholesale CBDC, and interoperability between digital and traditional FMI.</p>
-                    <div class="work-links">
-                        <a href="https://www.sdx.com/" target="_blank" class="btn btn-primary">Visit SDX</a>
-                        <a href="https://www.sdx.com/videos/lakeside-chats-episode-4-interview-with-david-newns-head-of-six-digital-exchange/" target="_blank" class="btn btn-secondary">Watch Interview</a>
-                    </div>
-                </div>
-            </div>
-            <div class="work-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/State_Street_Corporation_logo.svg/1200px-State_Street_Corporation_logo.svg.png" alt="State Street" class="work-logo" style="filter: brightness(0) invert(1);">
-                <div>
-                    <h3>State Street GlobalLink</h3>
-                    <p class="work-meta">Global Head of Execution Services (2001-2021)</p>
-                    <p>Senior Managing Director responsible for Currenex and FX Connect, award-winning independent multi-asset class trading platforms. Previously Global Head of Currenex and SwapEx, COO for State Street Global Exchange Trading & Clearing. Founding member of Currenex's London operation.</p>
-                    <div class="work-links">
-                        <a href="https://www.statestreet.com/" target="_blank" class="btn btn-secondary">State Street</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<main id="top">
 
-    <section id="about">
-        <p class="section-label">About Me</p>
-        <div class="about-content">
-            <p>I'm a financial services professional with over 25 years of experience in capital markets, specializing in the intersection of traditional finance and emerging digital asset infrastructure.</p>
-            <p>At <a href="https://www.sdx.com/" target="_blank">SIX Digital Exchange</a>, I led the team that built the world's first fully regulated DLT-based financial market infrastructure. We achieved multiple industry firsts: the first digital bond issuance on a regulated FMI, the first securities settlement using wholesale CBDC in production, and the first interoperability between digital and traditional market infrastructure.</p>
-            <p>Prior to SDX, I spent over 15 years at State Street, most recently as Global Head of GlobalLink Execution Services, overseeing the Currenex and FX Connect electronic trading platforms.</p>
-            
-            <p>Based in London, United Kingdom.</p>
-        </div>
-    </section>
+  <div class="hero wrap reveal">
+    <h1>Independent advisory in regulated digital assets and financial market infrastructure.</h1>
+    <p>Substrate works with exchanges, central securities depositories, banks, digital asset firms and regulators on market structure, tokenisation and the supervision of new technology. The firm is led by David Newns, who built and ran the world's first fully regulated blockchain-based exchange and central securities depository.</p>
+    <div class="cta"><a class="link" href="#contact">Request a meeting</a></div>
+  </div>
 
-    <footer>
-        <div class="footer-links">
-            <a href="https://www.sdx.com/" target="_blank">SDX</a>
-            <a href="https://www.linkedin.com/in/davidnewns/" target="_blank">LinkedIn</a>
-            <a href="mailto:david.newns@sdx.com">Contact</a>
+  <section id="services">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Services</span>
+        <h2>What Substrate does</h2>
+        <p class="standfirst">Substrate takes a small number of engagements where the mandate is material and the access is at board level.</p>
+      </div>
+      <div class="entries reveal">
+        <div class="entry">
+          <h3>Strategic advisory to FMI operators and their boards</h3>
+          <p>Strategy, operating model and governance for exchanges, CSDs and post-trade infrastructure, including the build and authorisation of new venues.</p>
         </div>
-        <p class="footer-copyright">© 2026 David Newns <span>_</span></p>
-    </footer>
+        <div class="entry">
+          <h3>Digital asset and tokenisation strategy for regulated institutions</h3>
+          <p>Issuance, settlement and custody architecture, platform and vendor selection, and the commercial case for moving regulated activity on chain.</p>
+        </div>
+        <div class="entry">
+          <h3>Regulatory engagement support</h3>
+          <p>Authorisation strategy, supervisory dialogue and policy response. Substrate advises regulated institutions moving into digital assets, crypto-native firms entering the regulatory perimeter, whether by choice or by expansion of the regime around them, and the authorities supervising both.</p>
+        </div>
+        <div class="entry">
+          <h3>Independent board roles</h3>
+          <p>Non-executive and advisory appointments at regulated market infrastructure and digital asset firms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mandates">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Current mandates</span>
+        <h2>Live engagements</h2>
+      </div>
+      <div class="entries reveal">
+        <div class="entry">
+          <h3>Axiology<span class="meta">Independent Non-Executive Director</span></h3>
+          <p>Axiology is one of four authorised DLT Trading and Settlement Systems under the EU DLT Pilot Regime, regulated by the Bank of Lithuania and supervised by ESMA.</p>
+        </div>
+        <div class="entry">
+          <h3>BPX Markets<span class="meta">Advisor</span></h3>
+          <p>BPX is an FCA-authorised Multilateral Trading Facility and the only FCA-authorised venue to have passed Gate 1 of the Bank of England and FCA Digital Securities Sandbox.</p>
+        </div>
+        <div class="entry">
+          <h3>Regulatory advisory<span class="meta">European financial services regulator</span></h3>
+          <p>Advising the executive and supervisory boards of a European financial services regulator on digital asset market structure and the supervision of frontier technology.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="record">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Track record</span>
+        <h2>Twenty-five years of regulated infrastructure</h2>
+        <p class="standfirst">The practice is built on twenty-five years operating regulated trading and settlement infrastructure, most recently at the frontier of blockchain-based FMI.</p>
+      </div>
+      <div class="entries reveal">
+        <div class="entry">
+          <h3>SIX Digital Exchange<span class="meta">Chief Executive Officer &middot; 2021 to 2026</span></h3>
+          <p>Led the world's first fully regulated blockchain-based exchange and central securities depository, licensed by FINMA. Directed the issuance of more than CHF 2.4 billion in digital securities, the first digital bond issuance on regulated FMI, the first securities settlement in wholesale central bank digital currency in production and the first production interoperability between digital and traditional FMI. Participant in Project Helvetia, the Swiss National Bank and BIS wholesale CBDC initiative.</p>
+        </div>
+        <div class="entry">
+          <h3>AsiaNext<span class="meta">Chair and Board Director &middot; 2023 to 2025</span></h3>
+          <p>Board director and rotating Chair of the MAS-regulated institutional crypto derivatives exchange in Singapore, a joint venture of SIX Group and SBI Digital Asset Holdings, live in 2024 with 24/7 trading in calendar and perpetual futures.</p>
+        </div>
+        <div class="entry">
+          <h3>State Street<span class="meta">Senior Managing Director &middot; 2007 to 2021</span></h3>
+          <p>Ran Currenex and FXConnect globally, ranked the largest multi-dealer FX platform in Euromoney's 2021 survey. CEO of two MiFID II Multilateral Trading Facilities and a CFTC-registered Swap Execution Facility. Designed State Street's institutional digital custody blueprint.</p>
+        </div>
+        <div class="entry">
+          <h3>Industry and regulatory engagement</h3>
+          <p>Contributor to work at IOSCO, the OECD, the Financial Markets Standards Board, the Global Blockchain Business Council and the FX Professionals Association.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="principal">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">The principal</span>
+        <h2>David Newns</h2>
+      </div>
+      <div class="principal reveal">
+        <img src="headshot.png" alt="David Newns">
+        <div>
+          <p>David Newns has spent his career building and running regulated electronic trading and settlement infrastructure. As CEO of SIX Digital Exchange he was the first executive globally to lead a fully regulated end-to-end digital asset platform spanning issuance, trading, custody and settlement, recognised by FINMA as a key person subject to fit-and-proper approval. Before SDX he spent two decades at State Street and Currenex scaling institutional FX venues to global market leadership. He holds an MA from the University of Cambridge and works with clients across the UK, Europe, Switzerland and Asia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Contact</span>
+        <h2>Substrate Advisory takes a limited number of engagements.</h2>
+      </div>
+      <div class="reveal">
+        <div class="actions">
+          <a class="link" href="CALENDLY_URL_PLACEHOLDER" target="_blank" rel="noopener">Request a meeting</a>
+          <a class="mail" href="mailto:david@substrate-advisory.com">david@substrate-advisory.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Substrate Advisory is the trading name of Substrate Ltd, registered in England and Wales, company number 16939421. Registered office: 3 Copse Way, Cambridge CB2 8BJ.</p>
+    <p>&copy; Substrate Ltd 2026.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(e){e.classList.add('in')});return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}
+    });
+  },{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+
 </body>
 </html>
