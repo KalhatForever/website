@@ -472,6 +472,7 @@ a:focus-visible,nav a:focus-visible{outline:2px solid var(--ink);outline-offset:
       f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
       f.title=label.replace(/^Play: /,'');
       f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
       f.setAttribute('allowfullscreen','');
       v.innerHTML='';
       v.appendChild(f);
