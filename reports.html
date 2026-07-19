@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reports &middot; Substrate Advisory</title>
+<meta name="description" content="Infrastructure Outside the Perimeter: a four-part report series from Substrate Advisory on AI, cloud, public blockchain infrastructure and post-quantum cryptography as supervisory questions for regulated firms.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FCFCFB;
+  --ink:#16161A;
+  --grey:#857F76;
+  --muted:#55524B;
+  --rule:#E3E1DC;
+  --display:"EB Garamond",Georgia,serif;
+  --utility:"IBM Plex Sans",system-ui,sans-serif;
+  --measure:34rem;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--utility);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:60rem;margin:0 auto;padding:0 2rem}
+
+/* the lockup: serif wordmark over letterspaced caps, taken from the mark itself */
+.eyebrow{
+  font-family:var(--utility);
+  font-size:.72rem;
+  font-weight:400;
+  letter-spacing:.34em;
+  text-transform:uppercase;
+  color:var(--grey);
+}
+
+/* masthead */
+.masthead{padding:3.5rem 0 0}
+.mark{display:block;text-decoration:none;color:inherit;width:max-content}
+.mark .word{font-family:var(--display);font-size:2rem;line-height:1;letter-spacing:-.005em}
+.mark .eyebrow{display:block;margin-top:.45rem;padding-left:.2em;font-size:.62rem;letter-spacing:.42em}
+
+nav{margin-top:2.75rem;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+nav ul{display:flex;flex-wrap:wrap;gap:2rem;list-style:none;padding:.85rem 0}
+nav a{
+  font-size:.8rem;letter-spacing:.06em;color:var(--muted);
+  text-decoration:none;transition:color .2s ease;
+}
+nav a:hover,nav a:focus-visible{color:var(--ink)}
+nav a[aria-current="page"]{color:var(--ink)}
+
+/* sections */
+section{padding:5.5rem 0}
+section + section{border-top:1px solid var(--rule)}
+.head{margin-bottom:3.5rem}
+.head h2{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:clamp(1.6rem,2.6vw,2.1rem);
+  line-height:1.2;
+  margin-top:.5rem;
+  letter-spacing:-.008em;
+}
+.standfirst{margin-top:1.25rem;max-width:var(--measure);color:var(--muted)}
+
+/* entries: a definition structure, not cards */
+.entries{border-top:1px solid var(--rule)}
+.entry{
+  border-bottom:1px solid var(--rule);
+  padding:2.25rem 0;
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:2.5rem;
+}
+.entry h3{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:1.22rem;
+  line-height:1.3;
+}
+.entry .meta{
+  display:block;
+  margin-top:.5rem;
+  font-family:var(--utility);
+  font-size:.72rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--grey);
+}
+.entry p{color:var(--muted);max-width:var(--measure)}
+
+.link{
+  display:inline-block;
+  font-size:.82rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink);
+  text-decoration:none;
+  border-bottom:1px solid var(--ink);
+  padding-bottom:.35rem;
+  transition:opacity .2s ease;
+}
+.link:hover,.link:focus-visible{opacity:.55}
+.entry .link{margin-top:1.5rem}
+
+/* footer */
+footer{border-top:1px solid var(--rule);padding:3rem 0 4rem}
+footer p{font-size:.78rem;line-height:1.8;color:var(--grey);max-width:38rem}
+footer p+p{margin-top:.75rem}
+
+a:focus-visible,nav a:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:1px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+@media (max-width:780px){
+  .wrap{padding:0 1.5rem}
+  section{padding:4rem 0}
+  .head{margin-bottom:2.5rem}
+  .entry{grid-template-columns:1fr;gap:1rem;padding:2rem 0}
+  nav ul{gap:1.25rem}
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="mark" href="index.html">
+      <span class="word">Substrate</span>
+      <span class="eyebrow">Advisory</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#mandates">Current mandates</a></li>
+        <li><a href="index.html#record">Track record</a></li>
+        <li><a href="reports.html" aria-current="page">Reports</a></li>
+        <li><a href="index.html#principal">The principal</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section id="reports">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Reports</span>
+        <h2>Infrastructure Outside the Perimeter</h2>
+        <p class="standfirst">A four-part series on the technology regulated firms depend on but do not control: AI, cloud, public blockchain infrastructure and post-quantum cryptography. Excerpts below; full text is available as PDF.</p>
+      </div>
+      <div class="entries reveal">
+
+        <div class="entry">
+          <h3>The Model You Cannot Audit<span class="meta">Part 1 of 4 &middot; AI Dependency and the Regulated Firm &middot; July 2026</span></h3>
+          <div>
+            <p>A third of AI use cases in UK financial services now run on third-party providers, concentrated among a handful of closed frontier models no supervisor can inspect. The June 2026 suspension of two frontier models, reversed nineteen days later through direct vendor-government negotiation, turned model availability into a documented operational risk. Sets out what a board should already have in place: a tested fallback, an owned evaluation suite and an availability floor for workloads that cannot stop.</p>
+            <a class="link" href="reports/pdfs/model-you-cannot-audit.pdf">Download PDF &rarr;</a>
+          </div>
+        </div>
+
+        <div class="entry">
+          <h3>The Provider You Cannot Exit<span class="meta">Part 2 of 4 &middot; Cloud Concentration and the Regulated Firm &middot; July 2026</span></h3>
+          <div>
+            <p>Three US hyperscalers hold 63 per cent of a cloud infrastructure market growing at 35 per cent a year, with no European alternative at scale. The EU and UK have now brought the providers themselves under direct supervisory oversight, and the October 2025 US-EAST-1 outage showed what the dependency looks like when it fails. Covers register-of-information granularity, tested exit plans and how to assess sovereign cloud offerings on the dimension that actually matters.</p>
+            <a class="link" href="reports/pdfs/provider-you-cannot-exit.pdf">Download PDF &rarr;</a>
+          </div>
+        </div>
+
+        <div class="entry">
+          <h3>The Settlement Layer Nobody Licenses<span class="meta">Part 3 of 4 &middot; Public Blockchain Infrastructure and the Regulated Firm &middot; July 2026</span></h3>
+          <div>
+            <p>When a regulated firm settles a tokenised asset on a public chain, the validators, RPC providers, oracles and bridges beneath the transaction sit entirely outside the supervisory perimeter, and the loss record at that layer already runs into billions. The DLT Pilot Regime and the Digital Securities Sandbox reward firms that treat this as an architected risk rather than an inherited one, and both currently have finite admission windows.</p>
+            <a class="link" href="reports/pdfs/settlement-layer-nobody-licenses.pdf">Download PDF &rarr;</a>
+          </div>
+        </div>
+
+        <div class="entry">
+          <h3>The Clock You Do Not Set<span class="meta">Part 4 of 4 &middot; Post-Quantum Cryptography and the Regulated Firm &middot; July 2026</span></h3>
+          <div>
+            <p>The replacement standards for RSA and elliptic-curve cryptography are public and free to implement, but the transition dates are American, and Executive Order 14412 has now made them binding on the US federal estate. Confidential data captured today is exposed the day a capable quantum computer exists, regardless of when the firm migrates. Sets out the inventory-first approach and why the HSM refresh cycle already under way is the decision point.</p>
+            <a class="link" href="reports/pdfs/clock-you-do-not-set.pdf">Download PDF &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Substrate Advisory is the trading name of Substrate Ltd, registered in England and Wales, company number 16939421. Registered office: 3 Copse Way, Cambridge CB2 8BJ.</p>
+    <p>&copy; Substrate Ltd 2026.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(e){e.classList.add('in')});return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}
+    });
+  },{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+
+</body>
+</html>
