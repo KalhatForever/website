@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
@@ -38,119 +39,119 @@ body{
 
 /* the lockup: serif wordmark over letterspaced caps, taken from the mark itself */
 .eyebrow{
-  font-family:var(--utility);
-  font-size:.72rem;
-  font-weight:400;
-  letter-spacing:.34em;
-  text-transform:uppercase;
-  color:var(--grey);
+font-family:var(–utility);
+font-size:.72rem;
+font-weight:400;
+letter-spacing:.34em;
+text-transform:uppercase;
+color:var(–grey);
 }
 
 /* masthead */
 .masthead{padding:3.5rem 0 0}
 .mark{display:block;text-decoration:none;color:inherit;width:max-content}
-.mark .word{font-family:var(--display);font-size:2rem;line-height:1;letter-spacing:-.005em}
+.mark .word{font-family:var(–display);font-size:2rem;line-height:1;letter-spacing:-.005em}
 .mark .eyebrow{display:block;margin-top:.45rem;padding-left:.2em;font-size:.62rem;letter-spacing:.42em}
 
-nav{margin-top:2.75rem;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+nav{margin-top:2.75rem;border-top:1px solid var(–rule);border-bottom:1px solid var(–rule)}
 nav ul{display:flex;flex-wrap:wrap;gap:2rem;list-style:none;padding:.85rem 0}
 nav a{
-  font-size:.8rem;letter-spacing:.06em;color:var(--muted);
-  text-decoration:none;transition:color .2s ease;
+font-size:.8rem;letter-spacing:.06em;color:var(–muted);
+text-decoration:none;transition:color .2s ease;
 }
-nav a:hover,nav a:focus-visible{color:var(--ink)}
+nav a:hover,nav a:focus-visible{color:var(–ink)}
 
 /* hero */
 .hero{padding:7rem 0 6.5rem}
 .hero h1{
-  font-family:var(--display);
-  font-weight:400;
-  font-size:clamp(2.1rem,4.6vw,3.35rem);
-  line-height:1.16;
-  letter-spacing:-.012em;
-  max-width:22ch;
+font-family:var(–display);
+font-weight:400;
+font-size:clamp(2.1rem,4.6vw,3.35rem);
+line-height:1.16;
+letter-spacing:-.012em;
+max-width:22ch;
 }
-.hero p{margin-top:2rem;max-width:var(--measure);color:var(--muted);font-size:1.06rem}
+.hero p{margin-top:2rem;max-width:var(–measure);color:var(–muted);font-size:1.06rem}
 .hero .cta{margin-top:2.75rem}
 
 .link{
-  display:inline-block;
-  font-size:.82rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--ink);
-  text-decoration:none;
-  border-bottom:1px solid var(--ink);
-  padding-bottom:.35rem;
-  transition:opacity .2s ease;
+display:inline-block;
+font-size:.82rem;
+letter-spacing:.14em;
+text-transform:uppercase;
+color:var(–ink);
+text-decoration:none;
+border-bottom:1px solid var(–ink);
+padding-bottom:.35rem;
+transition:opacity .2s ease;
 }
 .link:hover,.link:focus-visible{opacity:.55}
 
 /* sections */
-section{border-top:1px solid var(--rule);padding:5.5rem 0}
+section{border-top:1px solid var(–rule);padding:5.5rem 0}
 .head{margin-bottom:3.5rem}
 .head h2{
-  font-family:var(--display);
-  font-weight:400;
-  font-size:clamp(1.6rem,2.6vw,2.1rem);
-  line-height:1.2;
-  margin-top:.5rem;
-  letter-spacing:-.008em;
+font-family:var(–display);
+font-weight:400;
+font-size:clamp(1.6rem,2.6vw,2.1rem);
+line-height:1.2;
+margin-top:.5rem;
+letter-spacing:-.008em;
 }
-.standfirst{margin-top:1.25rem;max-width:var(--measure);color:var(--muted)}
+.standfirst{margin-top:1.25rem;max-width:var(–measure);color:var(–muted)}
 
 /* entries: a definition structure, not cards */
-.entries{border-top:1px solid var(--rule)}
+.entries{border-top:1px solid var(–rule)}
 .entry{
-  border-bottom:1px solid var(--rule);
-  padding:2.25rem 0;
-  display:grid;
-  grid-template-columns:1fr 2fr;
-  gap:2.5rem;
+border-bottom:1px solid var(–rule);
+padding:2.25rem 0;
+display:grid;
+grid-template-columns:1fr 2fr;
+gap:2.5rem;
 }
 .entry h3{
-  font-family:var(--display);
-  font-weight:500;
-  font-size:1.22rem;
-  line-height:1.3;
+font-family:var(–display);
+font-weight:500;
+font-size:1.22rem;
+line-height:1.3;
 }
 .entry .meta{
-  display:block;
-  margin-top:.5rem;
-  font-family:var(--utility);
-  font-size:.72rem;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:var(--grey);
+display:block;
+margin-top:.5rem;
+font-family:var(–utility);
+font-size:.72rem;
+letter-spacing:.16em;
+text-transform:uppercase;
+color:var(–grey);
 }
-.entry p{color:var(--muted);max-width:var(--measure)}
+.entry p{color:var(–muted);max-width:var(–measure)}
 
 /* principal */
 .principal{display:grid;grid-template-columns:14rem 1fr;gap:3.5rem;align-items:start}
 .principal img{width:100%;height:auto;display:block;filter:saturate(.9)}
-.principal .name{font-family:var(--display);font-size:1.5rem;margin-bottom:1.25rem}
-.principal p{color:var(--muted);max-width:var(--measure)}
+.principal .name{font-family:var(–display);font-size:1.5rem;margin-bottom:1.25rem}
+.principal p{color:var(–muted);max-width:var(–measure)}
 
 /* contact */
-.contact p{max-width:var(--measure);color:var(--muted)}
+.contact p{max-width:var(–measure);color:var(–muted)}
 .contact .actions{margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:2.5rem;align-items:center}
 .contact a.mail{
-  font-family:var(--display);
-  font-size:1.15rem;
-  color:var(--ink);
-  text-decoration:none;
-  border-bottom:1px solid var(--rule);
-  padding-bottom:.25rem;
-  transition:border-color .2s ease;
+font-family:var(–display);
+font-size:1.15rem;
+color:var(–ink);
+text-decoration:none;
+border-bottom:1px solid var(–rule);
+padding-bottom:.25rem;
+transition:border-color .2s ease;
 }
-.contact a.mail:hover,.contact a.mail:focus-visible{border-color:var(--ink)}
+.contact a.mail:hover,.contact a.mail:focus-visible{border-color:var(–ink)}
 
 /* footer */
-footer{border-top:1px solid var(--rule);padding:3rem 0 4rem}
-footer p{font-size:.78rem;line-height:1.8;color:var(--grey);max-width:38rem}
+footer{border-top:1px solid var(–rule);padding:3rem 0 4rem}
+footer p{font-size:.78rem;line-height:1.8;color:var(–grey);max-width:38rem}
 footer p+p{margin-top:.75rem}
 
-a:focus-visible,nav a:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:1px}
+a:focus-visible,nav a:focus-visible{outline:2px solid var(–ink);outline-offset:4px;border-radius:1px}
 
 /* reveal */
 .reveal{opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
@@ -158,16 +159,43 @@ a:focus-visible,nav a:focus-visible{outline:2px solid var(--ink);outline-offset:
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
 
 @media (max-width:780px){
-  .wrap{padding:0 1.5rem}
-  .hero{padding:4.5rem 0 4rem}
-  section{padding:4rem 0}
-  .head{margin-bottom:2.5rem}
-  .entry{grid-template-columns:1fr;gap:1rem;padding:2rem 0}
-  .principal{grid-template-columns:1fr;gap:2rem}
-  .principal img{max-width:12rem}
-  nav ul{gap:1.25rem}
+.wrap{padding:0 1.5rem}
+.hero{padding:4.5rem 0 4rem}
+section{padding:4rem 0}
+.head{margin-bottom:2.5rem}
+.entry{grid-template-columns:1fr;gap:1rem;padding:2rem 0}
+.principal{grid-template-columns:1fr;gap:2rem}
+.principal img{max-width:12rem}
+nav ul{gap:1.25rem}
 }
 </style>
+
+<link rel="canonical" href="https://www.substrate-advisory.com/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.substrate-advisory.com/#david-newns",
+      "name": "David Newns",
+      "jobTitle": "Founder, Substrate Advisory",
+      "description": "Former CEO of SIX Digital Exchange (SDX). Independent Non-Executive Director at Axiology Group and advisor to BPX Markets. Twenty-five years in institutional electronic trading and regulated financial market infrastructure.",
+      "url": "https://www.substrate-advisory.com/",
+      "worksFor": {"@id": "https://www.substrate-advisory.com/#substrate"},
+      "alumniOf": "University of Cambridge",
+      "knowsAbout": ["digital assets", "financial market infrastructure", "tokenisation", "wholesale CBDC", "trading venues", "digital custody"]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.substrate-advisory.com/#substrate",
+      "name": "Substrate Advisory",
+      "url": "https://www.substrate-advisory.com/",
+      "founder": {"@id": "https://www.substrate-advisory.com/#david-newns"}
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
