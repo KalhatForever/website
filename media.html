@@ -21,7 +21,7 @@ html{scroll-behavior:smooth}
 body{
   background:#FCFCFB;
   color:#16161A;
-  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-family:IBM Plex Sans,system-ui,sans-serif;
   font-size:17px;
   line-height:1.65;
   -webkit-font-smoothing:antialiased;
@@ -29,7 +29,7 @@ body{
 .wrap{max-width:60rem;margin:0 auto;padding:0 2rem}
 
 .eyebrow{
-font-family:“IBM Plex Sans”,system-ui,sans-serif;
+font-family:IBM Plex Sans,system-ui,sans-serif;
 font-size:.72rem;
 font-weight:400;
 letter-spacing:.34em;
@@ -40,7 +40,7 @@ color:#857F76;
 /* masthead */
 .masthead{padding:3.5rem 0 0}
 .mark{display:block;text-decoration:none;color:inherit;width:max-content}
-.mark .word{font-family:“EB Garamond”,Georgia,serif;font-size:2rem;line-height:1;letter-spacing:-.005em}
+.mark .word{font-family:EB Garamond,Georgia,serif;font-size:2rem;line-height:1;letter-spacing:-.005em}
 .mark .eyebrow{display:block;margin-top:.45rem;padding-left:.2em;font-size:.62rem;letter-spacing:.42em}
 
 nav{margin-top:2.75rem;border-top:1px solid #E3E1DC;border-bottom:1px solid #E3E1DC}
@@ -50,12 +50,12 @@ font-size:.8rem;letter-spacing:.06em;color:#55524B;
 text-decoration:none;transition:color .2s ease;
 }
 nav a:hover,nav a:focus-visible{color:#16161A}
-nav a[aria-current=“page”]{color:#16161A}
+nav a[aria-current=page]{color:#16161A}
 
 /* page head */
 .pagehead{padding:5.5rem 0 5rem}
 .pagehead h1{
-font-family:“EB Garamond”,Georgia,serif;
+font-family:EB Garamond,Georgia,serif;
 font-weight:400;
 font-size:clamp(2rem,4vw,2.9rem);
 line-height:1.18;
@@ -82,7 +82,7 @@ transition:opacity .2s ease;
 section{border-top:1px solid #E3E1DC;padding:5.5rem 0}
 .head{margin-bottom:3.5rem}
 .head h2{
-font-family:“EB Garamond”,Georgia,serif;
+font-family:EB Garamond,Georgia,serif;
 font-weight:400;
 font-size:clamp(1.6rem,2.6vw,2.1rem);
 line-height:1.2;
@@ -101,7 +101,7 @@ grid-template-columns:1fr 2fr;
 gap:2.5rem;
 }
 .entry h3{
-font-family:“EB Garamond”,Georgia,serif;
+font-family:EB Garamond,Georgia,serif;
 font-weight:500;
 font-size:1.22rem;
 line-height:1.3;
@@ -109,7 +109,7 @@ line-height:1.3;
 .entry .meta{
 display:block;
 margin-top:.5rem;
-font-family:“IBM Plex Sans”,system-ui,sans-serif;
+font-family:IBM Plex Sans,system-ui,sans-serif;
 font-size:.72rem;
 letter-spacing:.16em;
 text-transform:uppercase;
@@ -142,16 +142,14 @@ background:transparent;
 border:0;cursor:pointer;
 display:flex;align-items:center;justify-content:center;
 }
-.video button::before{
-content:””;
+.video button .pb-circle{
 width:3.4rem;height:3.4rem;
 border-radius:50%;
 background:#FCFCFB;
 border:1px solid #E3E1DC;
 transition:transform .2s ease;
 }
-.video button::after{
-content:””;
+.video button .pb-tri{
 position:absolute;
 width:0;height:0;
 border-style:solid;
@@ -159,7 +157,7 @@ border-width:.5rem 0 .5rem .85rem;
 border-color:transparent transparent transparent #16161A;
 margin-left:.15rem;
 }
-.video button:hover::before,.video button:focus-visible::before{transform:scale(1.08)}
+.video button:hover .pb-circle,.video button:focus-visible .pb-circle{transform:scale(1.08)}
 .video button:hover~img{filter:saturate(1)}
 .video button:focus-visible{outline:2px solid #16161A;outline-offset:-2px}
 
@@ -237,7 +235,7 @@ nav ul{gap:1.25rem}
         <p>Blockchain use cases in traditional finance, institutional adoption and interoperability, recorded around the SmartCon 2023 Swift and CCIP demonstration.</p>
         <div class="video" data-id="Ip9_iQKsV28">
           <img src="https://i.ytimg.com/vi/Ip9_iQKsV28/hqdefault.jpg" alt="" loading="lazy">
-          <button type="button" aria-label="Play: Revolutionizing Finance, Chainlink interview with David Newns"></button>
+          <button type="button" aria-label="Play: Revolutionizing Finance, Chainlink interview with David Newns"><span class="pb-circle"></span><span class="pb-tri"></span></button>
         </div>
       </div>
     </div>
@@ -251,7 +249,7 @@ nav ul{gap:1.25rem}
         <p>The liquidity management implications of settling tokenised assets in wholesale CBDC, with Thomas Moser of the Swiss National Bank.</p>
         <div class="video" data-id="v3twgEdf4gM">
           <img src="https://i.ytimg.com/vi/v3twgEdf4gM/hqdefault.jpg" alt="" loading="lazy">
-          <button type="button" aria-label="Play: FNA CBDC Broadcast on Project Helvetia III with David Newns and Thomas Moser"></button>
+          <button type="button" aria-label="Play: FNA CBDC Broadcast on Project Helvetia III with David Newns and Thomas Moser"><span class="pb-circle"></span><span class="pb-tri"></span></button>
         </div>
       </div>
     </div>
@@ -265,7 +263,7 @@ nav ul{gap:1.25rem}
         <p>The foundations for fully digital capital markets, wholesale CBDC integration and Switzerland's leading role, with Ian Simpson.</p>
         <div class="video" data-id="88eh9wpk5Rw">
           <img src="https://i.ytimg.com/vi/88eh9wpk5Rw/hqdefault.jpg" alt="" loading="lazy">
-          <button type="button" aria-label="Play: RULEMATCH Spot On with David Newns, Part 2"></button>
+          <button type="button" aria-label="Play: RULEMATCH Spot On with David Newns, Part 2"><span class="pb-circle"></span><span class="pb-tri"></span></button>
         </div>
       </div>
     </div>
@@ -279,7 +277,7 @@ nav ul{gap:1.25rem}
         <p>The World Economic Forum's April 2024 report on wholesale CBDC and its case study on SIX Digital Exchange.</p>
         <div class="video" data-id="_9mPDLT1UHU">
           <img src="https://i.ytimg.com/vi/_9mPDLT1UHU/hqdefault.jpg" alt="" loading="lazy">
-          <button type="button" aria-label="Play: SDX Lakeside Chats on modernising financial markets with wholesale CBDC"></button>
+          <button type="button" aria-label="Play: SDX Lakeside Chats on modernising financial markets with wholesale CBDC"><span class="pb-circle"></span><span class="pb-tri"></span></button>
         </div>
       </div>
     </div>
@@ -293,7 +291,7 @@ nav ul{gap:1.25rem}
         <p>How financial market infrastructure connects traditional and tokenised markets and scales access to digital securities.</p>
         <div class="video" data-id="GGH3rwtLnk8">
           <img src="https://i.ytimg.com/vi/GGH3rwtLnk8/hqdefault.jpg" alt="" loading="lazy">
-          <button type="button" aria-label="Play: SDX interview on the role of FMIs in bridging traditional and tokenised markets"></button>
+          <button type="button" aria-label="Play: SDX interview on the role of FMIs in bridging traditional and tokenised markets"><span class="pb-circle"></span><span class="pb-tri"></span></button>
         </div>
       </div>
     </div>
@@ -381,7 +379,7 @@ nav ul{gap:1.25rem}
         <p>How banks and other financial institutions are entering the digital asset and crypto ecosystems.</p>
         <div class="video" data-id="NhSS_yUDIFU">
           <img src="https://i.ytimg.com/vi/NhSS_yUDIFU/hqdefault.jpg" alt="" loading="lazy">
-          <button type="button" aria-label="Play: SDX Lakeside Chats episode 8 with David Newns"></button>
+          <button type="button" aria-label="Play: SDX Lakeside Chats episode 8 with David Newns"><span class="pb-circle"></span><span class="pb-tri"></span></button>
         </div>
       </div>
     </div>
@@ -395,7 +393,7 @@ nav ul{gap:1.25rem}
         <p>How SIX Digital Exchange is positioned within the digital asset and cryptocurrency landscape of 2022.</p>
         <div class="video" data-id="RiC7g-9nevc">
           <img src="https://i.ytimg.com/vi/RiC7g-9nevc/hqdefault.jpg" alt="" loading="lazy">
-          <button type="button" aria-label="Play: SDX Lakeside Chats episode 4 with David Newns"></button>
+          <button type="button" aria-label="Play: SDX Lakeside Chats episode 4 with David Newns"><span class="pb-circle"></span><span class="pb-tri"></span></button>
         </div>
       </div>
     </div>
@@ -435,7 +433,7 @@ nav ul{gap:1.25rem}
         <p>Why custody and collateral management matter for institutional digital asset trading, recorded at the Crypto Finance Conference in St Moritz.</p>
         <div class="video" data-id="bf6pQxF52Ng">
           <img src="https://i.ytimg.com/vi/bf6pQxF52Ng/hqdefault.jpg" alt="" loading="lazy">
-          <button type="button" aria-label="Play: RULEMATCH Spot On Winter Edition with David Newns"></button>
+          <button type="button" aria-label="Play: RULEMATCH Spot On Winter Edition with David Newns"><span class="pb-circle"></span><span class="pb-tri"></span></button>
         </div>
       </div>
     </div>
