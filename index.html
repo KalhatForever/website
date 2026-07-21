@@ -1,358 +1,152 @@
 <!DOCTYPE html>
-
-<html lang="en-GB">
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Substrate Advisory</title>
-<meta name="description" content="Independent advisory in regulated digital assets and financial market infrastructure. Substrate works with exchanges, central securities depositories, banks, digital asset firms and regulators.">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:light}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{
-  background:#FCFCFB;
-  color:#16161A;
-  font-family:IBM Plex Sans,system-ui,sans-serif;
-  font-size:17px;
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-}
-.wrap{max-width:60rem;margin:0 auto;padding:0 2rem}
-
-/* the lockup: serif wordmark over letterspaced caps, taken from the mark itself */
-.eyebrow{
-font-family:IBM Plex Sans,system-ui,sans-serif;
-font-size:.72rem;
-font-weight:400;
-letter-spacing:.34em;
-text-transform:uppercase;
-color:#857F76;
-}
-
-/* masthead */
-.masthead{padding:3.5rem 0 0}
-.mark{display:block;text-decoration:none;color:inherit;width:max-content}
-.mark .word{font-family:EB Garamond,Georgia,serif;font-size:2rem;line-height:1;letter-spacing:-.005em}
-.mark .eyebrow{display:block;margin-top:.45rem;padding-left:.2em;font-size:.62rem;letter-spacing:.42em}
-
-nav{margin-top:2.75rem;border-top:1px solid #E3E1DC;border-bottom:1px solid #E3E1DC}
-nav ul{display:flex;flex-wrap:wrap;gap:2rem;list-style:none;padding:.85rem 0}
-nav a{
-font-size:.8rem;letter-spacing:.06em;color:#55524B;
-text-decoration:none;transition:color .2s ease;
-}
-nav a:hover,nav a:focus-visible{color:#16161A}
-
-/* hero */
-.hero{padding:7rem 0 6.5rem}
-.hero h1{
-font-family:EB Garamond,Georgia,serif;
-font-weight:400;
-font-size:clamp(2.1rem,4.6vw,3.35rem);
-line-height:1.16;
-letter-spacing:-.012em;
-max-width:22ch;
-}
-.hero p{margin-top:2rem;max-width:34rem;color:#55524B;font-size:1.06rem}
-.hero .cta{margin-top:2.75rem}
-
-.link{
-display:inline-block;
-font-size:.82rem;
-letter-spacing:.14em;
-text-transform:uppercase;
-color:#16161A;
-text-decoration:none;
-border-bottom:1px solid #16161A;
-padding-bottom:.35rem;
-transition:opacity .2s ease;
-}
-.link:hover,.link:focus-visible{opacity:.55}
-
-/* sections */
-section{border-top:1px solid #E3E1DC;padding:5.5rem 0}
-.head{margin-bottom:3.5rem}
-.head h2{
-font-family:EB Garamond,Georgia,serif;
-font-weight:400;
-font-size:clamp(1.6rem,2.6vw,2.1rem);
-line-height:1.2;
-margin-top:.5rem;
-letter-spacing:-.008em;
-}
-.standfirst{margin-top:1.25rem;max-width:34rem;color:#55524B}
-
-/* entries: a definition structure, not cards */
-.entries{border-top:1px solid #E3E1DC}
-.entry{
-border-bottom:1px solid #E3E1DC;
-padding:2.25rem 0;
-display:grid;
-grid-template-columns:1fr 2fr;
-gap:2.5rem;
-}
-.entry h3{
-font-family:EB Garamond,Georgia,serif;
-font-weight:500;
-font-size:1.22rem;
-line-height:1.3;
-}
-.entry .meta{
-display:block;
-margin-top:.5rem;
-font-family:IBM Plex Sans,system-ui,sans-serif;
-font-size:.72rem;
-letter-spacing:.16em;
-text-transform:uppercase;
-color:#857F76;
-}
-.entry p{color:#55524B;max-width:34rem}
-
-/* principal */
-.principal{display:grid;grid-template-columns:14rem 1fr;gap:3.5rem;align-items:start}
-.principal img{width:100%;height:auto;display:block;filter:saturate(.9)}
-.principal .name{font-family:EB Garamond,Georgia,serif;font-size:1.5rem;margin-bottom:1.25rem}
-.principal p{color:#55524B;max-width:34rem}
-
-/* contact */
-.contact p{max-width:34rem;color:#55524B}
-.contact .actions{margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:2.5rem;align-items:center}
-.contact a.mail{
-font-family:EB Garamond,Georgia,serif;
-font-size:1.15rem;
-color:#16161A;
-text-decoration:none;
-border-bottom:1px solid #E3E1DC;
-padding-bottom:.25rem;
-transition:border-color .2s ease;
-}
-.contact a.mail:hover,.contact a.mail:focus-visible{border-color:#16161A}
-
-/* footer */
-footer{border-top:1px solid #E3E1DC;padding:3rem 0 4rem}
-footer p{font-size:.78rem;line-height:1.8;color:#857F76;max-width:38rem}
-footer p+p{margin-top:.75rem}
-
-a:focus-visible,nav a:focus-visible{outline:2px solid #16161A;outline-offset:4px;border-radius:1px}
-
-/* reveal */
-.reveal{opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
-
-@media (max-width:780px){
-.wrap{padding:0 1.5rem}
-.hero{padding:4.5rem 0 4rem}
-section{padding:4rem 0}
-.head{margin-bottom:2.5rem}
-.entry{grid-template-columns:1fr;gap:1rem;padding:2rem 0}
-.principal{grid-template-columns:1fr;gap:2rem}
-.principal img{max-width:12rem}
-nav ul{gap:1.25rem}
-}
+@keyframes om-rev{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-rulex{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){[style*="om-rev"],[style*="om-rulex"]{animation:none!important}}
 </style>
+</helmet>
+<div style="background:#FCFCFB;color:#16161A;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased">
 
-<link rel="canonical" href="https://www.substrate-advisory.com/">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": "https://www.substrate-advisory.com/#david-newns",
-      "name": "David Newns",
-      "jobTitle": "Founder, Substrate Advisory",
-      "description": "Former CEO of SIX Digital Exchange (SDX). Independent Non-Executive Director at Axiology Group and advisor to BPX Markets. Twenty-five years in institutional electronic trading and regulated financial market infrastructure.",
-      "url": "https://www.substrate-advisory.com/",
-      "worksFor": {"@id": "https://www.substrate-advisory.com/#substrate"},
-      "alumniOf": "University of Cambridge",
-      "knowsAbout": ["digital assets", "financial market infrastructure", "tokenisation", "wholesale CBDC", "trading venues", "digital custody"]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://www.substrate-advisory.com/#substrate",
-      "name": "Substrate Advisory",
-      "url": "https://www.substrate-advisory.com/",
-      "founder": {"@id": "https://www.substrate-advisory.com/#david-newns"}
+  <header style="position:sticky;top:0;z-index:6;background:rgba(252,252,251,.92);backdrop-filter:blur(6px);box-shadow:{{ mastShadow }};padding:{{ mastPad }};transition:padding .35s ease,box-shadow .35s ease">
+    <div style="max-width:60rem;margin:0 auto;padding:0 2rem">
+      <a href="#top" style="display:block;text-decoration:none;color:inherit;width:max-content"><span style="font-family:'EB Garamond',Georgia,serif;font-size:{{ wordSize }};line-height:1;letter-spacing:-.005em;transition:font-size .35s ease;display:inline-block">Substrate</span><span style="display:block;margin-top:.45rem;padding-left:.2em;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:#857F76">Advisory</span></a>
+      <nav style="margin-top:{{ navTop }};border-top:1px solid #E3E1DC;border-bottom:1px solid #E3E1DC;transition:margin-top .35s ease"><ul style="display:flex;flex-wrap:wrap;gap:2rem;list-style:none;padding:.85rem 0;margin:0">
+        <sc-for list="{{ navItems }}" as="it" hint-placeholder-count="8">
+          <li><a href="{{ it.href }}" style="font-size:.8rem;letter-spacing:.06em;text-decoration:none;transition:color .2s ease;color:{{ it.color }}">{{ it.label }}</a></li>
+        </sc-for>
+      </ul></nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div style="padding:7rem 0 6rem"><div style="max-width:60rem;margin:0 auto;padding:0 2rem">
+      <div style="animation:om-rev .8s ease .05s both">
+        <h1 style="font-family:'EB Garamond',Georgia,serif;font-weight:400;font-size:clamp(2.1rem,4.6vw,3.35rem);line-height:1.16;letter-spacing:-.012em;max-width:22ch">Independent advisory in regulated digital assets and financial market infrastructure.</h1>
+        <div style="height:1px;background:#16161A;width:5rem;margin-top:1.75rem;transform-origin:left;animation:om-rulex .9s ease .4s both"></div>
+        <p style="margin-top:1.75rem;max-width:34rem;color:#55524B;font-size:1.06rem">Substrate works with exchanges, central securities depositories, banks, digital asset firms and regulators on market structure, tokenisation and the supervision of new technology. The firm is led by David Newns, who built and ran the world's first fully regulated blockchain-based exchange and central securities depository.</p>
+        <div style="margin-top:2.75rem"><a href="#contact" style="display:inline-block;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:#16161A;text-decoration:none;border-bottom:1px solid #16161A;padding-bottom:.35rem">Request a meeting</a></div>
+      </div>
+    </div></div>
+
+    <div data-band style="border-top:1px solid #E3E1DC;border-bottom:1px solid #E3E1DC;animation:om-rev .8s ease .2s both"><div style="max-width:60rem;margin:0 auto;padding:0 2rem"><div style="display:grid;grid-template-columns:repeat(4,1fr)">
+      <sc-for list="{{ rows }}" as="row" hint-placeholder-count="4">
+        <div style="padding:2.5rem 1.5rem;border-left:1px solid #E3E1DC">
+          <div style="font-family:'EB Garamond',Georgia,serif;font-size:2.4rem;line-height:1;letter-spacing:-.01em;color:#16161A">{{ row.display }}</div>
+          <div style="margin-top:.9rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#857F76;line-height:1.5">{{ row.label }}</div>
+        </div>
+      </sc-for>
+    </div></div></div>
+
+    <dc-import name="HomeSections" hint-size="100%,1600px"></dc-import>
+  </main>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1040px&quot;,&quot;height&quot;:&quot;900px&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.metrics = [
+      { v: 2.4, dec: 1, prefix: "CHF ", suffix: "bn", label: "Digital securities issued" },
+      { v: 25, dec: 0, prefix: "", suffix: "", label: "Years in regulated FMI" },
+      { v: 4, dec: 0, prefix: "", suffix: "", label: "World-firsts delivered" },
+      { v: 3, dec: 0, prefix: "", suffix: "", label: "Live mandates" },
+    ];
+    this.nav = [
+      { label: "Services", href: "#services", spy: "services" },
+      { label: "Current mandates", href: "#mandates", spy: "mandates" },
+      { label: "Track record", href: "#record", spy: "record" },
+      { label: "Reports", href: "reports.html", spy: null },
+      { label: "The principal", href: "#principal", spy: "principal" },
+      { label: "Media", href: "media.html", spy: null },
+      { label: "In the press", href: "press.html", spy: null },
+      { label: "Contact", href: "#contact", spy: "contact" },
+    ];
+    this.state = {
+      scrolled: false,
+      active: null,
+      rows: this.metrics.map((m) => ({ display: m.prefix + "0" + m.suffix, label: m.label })),
+    };
+  }
+
+  renderVals() {
+    const s = this.state;
+    return {
+      rows: s.rows,
+      mastPad: s.scrolled ? "1rem 0 0" : "3.5rem 0 0",
+      mastShadow: s.scrolled ? "0 1px 0 #E3E1DC" : "none",
+      wordSize: s.scrolled ? "1.4rem" : "2rem",
+      navTop: s.scrolled ? "1.25rem" : "2.75rem",
+      navItems: this.nav.map((n) => ({
+        label: n.label,
+        href: n.href,
+        color: n.spy && n.spy === s.active ? "#16161A" : "#55524B",
+      })),
+    };
+  }
+
+  componentDidMount() {
+    this.onScroll = () => {
+      const y = window.scrollY || document.documentElement.scrollTop;
+      let active = null;
+      this.nav.forEach((n) => {
+        if (!n.spy) return;
+        const sec = document.getElementById(n.spy);
+        if (sec && sec.getBoundingClientRect().top <= 140) active = n.spy;
+      });
+      const scrolled = y > 40;
+      if (scrolled !== this.state.scrolled || active !== this.state.active) {
+        this.setState({ scrolled, active });
+      }
+    };
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+    this.onScroll();
+
+    const startCount = () => {
+      if (this.__counted) return;
+      this.__counted = true;
+      const dur = 1300, t0 = performance.now();
+      const step = (now) => {
+        let p = Math.min(1, (now - t0) / dur);
+        p = 1 - Math.pow(1 - p, 3);
+        this.setState({
+          rows: this.metrics.map((m) => ({
+            display: m.prefix + (m.v * p).toFixed(m.dec) + m.suffix,
+            label: m.label,
+          })),
+        });
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    const band = document.querySelector("[data-band]");
+    if (band && "IntersectionObserver" in window) {
+      const io = new IntersectionObserver((ents) => {
+        ents.forEach((e) => { if (e.isIntersecting) { startCount(); io.disconnect(); } });
+      }, { threshold: 0.25 });
+      io.observe(band);
+      setTimeout(() => { if (!this.__counted) startCount(); }, 2500);
+    } else {
+      startCount();
     }
-  ]
+  }
+
+  componentWillUnmount() {
+    if (this.onScroll) window.removeEventListener("scroll", this.onScroll);
+  }
 }
 </script>
-</head>
-<body>
-
-<header class="masthead">
-  <div class="wrap">
-    <a class="mark" href="#top">
-      <span class="word">Substrate</span>
-      <span class="eyebrow">Advisory</span>
-    </a>
-    <nav>
-      <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#mandates">Current mandates</a></li>
-        <li><a href="#record">Track record</a></li>
-        <li><a href="reports.html">Reports</a></li>
-        <li><a href="#principal">The principal</a></li>
-        <li><a href="media.html">Media</a></li>
-        <li><a href="press.html">In the press</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main id="top">
-
-  <div class="hero">
-    <div class="wrap reveal">
-    <h1>Independent advisory in regulated digital assets and financial market infrastructure.</h1>
-    <p>Substrate works with exchanges, central securities depositories, banks, digital asset firms and regulators on market structure, tokenisation and the supervision of new technology. The firm is led by David Newns, who built and ran the world's first fully regulated blockchain-based exchange and central securities depository.</p>
-    <div class="cta"><a class="link" href="#contact">Request a meeting</a></div>
-    </div>
-  </div>
-
-  <section id="services">
-    <div class="wrap">
-      <div class="head reveal">
-        <span class="eyebrow">Services</span>
-        <h2>What Substrate does</h2>
-        <p class="standfirst">Substrate takes a small number of engagements where the mandate is material and the access is at board level.</p>
-      </div>
-      <div class="entries reveal">
-        <div class="entry">
-          <h3>Strategic advisory to FMI operators and their boards</h3>
-          <p>Strategy, operating model and governance for exchanges, CSDs and post-trade infrastructure, including the build and authorisation of new venues.</p>
-        </div>
-        <div class="entry">
-          <h3>Digital asset and tokenisation strategy for regulated institutions</h3>
-          <p>Issuance, settlement and custody architecture, platform and vendor selection, and the commercial case for moving regulated activity on chain.</p>
-        </div>
-        <div class="entry">
-          <h3>Regulatory engagement support</h3>
-          <p>Authorisation strategy, supervisory dialogue and policy response. Substrate advises regulated institutions moving into digital assets, crypto-native firms entering the regulatory perimeter, whether by choice or by expansion of the regime around them, and the authorities supervising both.</p>
-        </div>
-        <div class="entry">
-          <h3>Independent board roles</h3>
-          <p>Non-executive and advisory appointments at regulated market infrastructure and digital asset firms.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="mandates">
-    <div class="wrap">
-      <div class="head reveal">
-        <span class="eyebrow">Current mandates</span>
-        <h2>Live engagements</h2>
-      </div>
-      <div class="entries reveal">
-        <div class="entry">
-          <h3>Axiology<span class="meta">Independent Non-Executive Director</span></h3>
-          <p>Axiology is one of four authorised DLT Trading and Settlement Systems under the EU DLT Pilot Regime, regulated by the Bank of Lithuania and supervised by ESMA.</p>
-        </div>
-        <div class="entry">
-          <h3>BPX Markets<span class="meta">Advisor</span></h3>
-          <p>BPX is an FCA-authorised Multilateral Trading Facility and the only FCA-authorised venue to have passed Gate 1 of the Bank of England and FCA Digital Securities Sandbox.</p>
-        </div>
-        <div class="entry">
-          <h3>Regulatory advisory<span class="meta">European financial services regulator</span></h3>
-          <p>Advising the executive and supervisory boards of a European financial services regulator on digital asset market structure and the supervision of frontier technology.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="record">
-    <div class="wrap">
-      <div class="head reveal">
-        <span class="eyebrow">Track record</span>
-        <h2>Twenty-five years of regulated infrastructure</h2>
-        <p class="standfirst">The practice is built on twenty-five years operating regulated trading and settlement infrastructure, most recently at the frontier of blockchain-based FMI.</p>
-      </div>
-      <div class="entries reveal">
-        <div class="entry">
-          <h3>SIX Digital Exchange<span class="meta">Chief Executive Officer &middot; 2021 to 2026</span></h3>
-          <p>Led the world's first fully regulated blockchain-based exchange and central securities depository, licensed by FINMA. Directed the issuance of more than CHF 2.4 billion in digital securities, the first digital bond issuance on regulated FMI, the first securities settlement in wholesale central bank digital currency in production and the first production interoperability between digital and traditional FMI. Participant in Project Helvetia, the Swiss National Bank and BIS wholesale CBDC initiative.</p>
-        </div>
-        <div class="entry">
-          <h3>AsiaNext<span class="meta">Chair and Board Director &middot; 2023 to 2025</span></h3>
-          <p>Board director and rotating Chair of the MAS-regulated institutional crypto derivatives exchange in Singapore, a joint venture of SIX Group and SBI Digital Asset Holdings, live in 2024 with 24/7 trading in calendar and perpetual futures.</p>
-        </div>
-        <div class="entry">
-          <h3>State Street<span class="meta">Senior Managing Director &middot; 2007 to 2021</span></h3>
-          <p>Ran Currenex and FXConnect globally, ranked the largest multi-dealer FX platform in Euromoney's 2021 survey. CEO of two MiFID II Multilateral Trading Facilities and a CFTC-registered Swap Execution Facility. Designed State Street's institutional digital custody blueprint.</p>
-        </div>
-        <div class="entry">
-          <h3>Industry and regulatory engagement</h3>
-          <p>Contributor to work at IOSCO, the OECD, the Financial Markets Standards Board, the Global Blockchain Business Council and the FX Professionals Association.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="principal">
-    <div class="wrap">
-      <div class="head reveal">
-        <span class="eyebrow">The principal</span>
-        <h2>David Newns</h2>
-      </div>
-      <div class="principal reveal">
-        <img src="headshot.png" alt="David Newns">
-        <div>
-          <p>David Newns has spent his career building and running regulated electronic trading and settlement infrastructure. As CEO of SIX Digital Exchange he was the first executive globally to lead a fully regulated end-to-end digital asset platform spanning issuance, trading, custody and settlement, recognised by FINMA as a key person subject to fit-and-proper approval. Before SDX he spent two decades at State Street and Currenex scaling institutional FX venues to global market leadership. He holds an MA from the University of Cambridge and works with clients across the UK, Europe, Switzerland and Asia.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <div class="wrap">
-      <div class="head reveal">
-        <span class="eyebrow">Contact</span>
-        <h2>Substrate Advisory takes a limited number of engagements.</h2>
-      </div>
-      <div class="reveal">
-        <div class="actions">
-          <a class="link" href="https://calendly.com/david-newns/introductory-meeting" target="_blank" rel="noopener">Request a meeting</a>
-          <a class="mail" href="mailto:david@substrate-advisory.com">david@substrate-advisory.com</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="wrap">
-    <p>Substrate Advisory is the trading name of Substrate Ltd, registered in England and Wales, company number 16939421. Registered office: 3 Copse Way, Cambridge CB2 8BJ.</p>
-    <p>&copy; Substrate Ltd 2026.</p>
-  </div>
-</footer>
-
-<script>
-(function(){
-  var els=document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    els.forEach(function(e){e.classList.add('in')});return;
-  }
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}
-    });
-  },{rootMargin:'0px 0px -8% 0px'});
-  els.forEach(function(e){io.observe(e)});
-})();
-</script>
-
 </body>
 </html>

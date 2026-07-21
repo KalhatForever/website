@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="position:sticky;top:0;z-index:6;background:rgba(252,252,251,.92);backdrop-filter:blur(6px);box-shadow:{{ mastShadow }};padding:{{ mastPad }};transition:padding .35s ease,box-shadow .35s ease;font-family:'IBM Plex Sans',system-ui,sans-serif">
+  <div style="max-width:60rem;margin:0 auto;padding:0 2rem">
+    <a href="index.html" style="display:block;text-decoration:none;color:inherit;width:max-content"><span style="font-family:'EB Garamond',Georgia,serif;font-size:{{ wordSize }};line-height:1;letter-spacing:-.005em;transition:font-size .35s ease;display:inline-block;color:#16161A">Substrate</span><span style="display:block;margin-top:.45rem;padding-left:.2em;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:#857F76">Advisory</span></a>
+    <nav style="margin-top:{{ navTop }};border-top:1px solid #E3E1DC;border-bottom:1px solid #E3E1DC;transition:margin-top .35s ease"><ul style="display:flex;flex-wrap:wrap;gap:2rem;list-style:none;padding:.85rem 0;margin:0">
+      <sc-for list="{{ navItems }}" as="it" hint-placeholder-count="8">
+        <li><a href="{{ it.href }}" style="font-size:.8rem;letter-spacing:.06em;text-decoration:none;transition:color .2s ease;color:{{ it.color }}">{{ it.label }}</a></li>
+      </sc-for>
+    </ul></nav>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1040px&quot;,&quot;height&quot;:&quot;140px&quot;},&quot;current&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;services&quot;,&quot;mandates&quot;,&quot;record&quot;,&quot;reports&quot;,&quot;principal&quot;,&quot;media&quot;,&quot;press&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;reports&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.nav = [
+      { label: "Services", href: "index.html#services", key: "services" },
+      { label: "Current mandates", href: "index.html#mandates", key: "mandates" },
+      { label: "Track record", href: "index.html#record", key: "record" },
+      { label: "Reports", href: "reports.html", key: "reports" },
+      { label: "The principal", href: "index.html#principal", key: "principal" },
+      { label: "Media", href: "media.html", key: "media" },
+      { label: "In the press", href: "press.html", key: "press" },
+      { label: "Contact", href: "index.html#contact", key: "contact" },
+    ];
+    this.state = { scrolled: false };
+  }
+
+  renderVals() {
+    const s = this.state;
+    const current = this.props.current;
+    return {
+      mastPad: s.scrolled ? "1rem 0 0" : "3.5rem 0 0",
+      mastShadow: s.scrolled ? "0 1px 0 #E3E1DC" : "none",
+      wordSize: s.scrolled ? "1.4rem" : "2rem",
+      navTop: s.scrolled ? "1.25rem" : "2.75rem",
+      navItems: this.nav.map((n) => ({
+        label: n.label,
+        href: n.href,
+        color: n.key === current ? "#16161A" : "#55524B",
+      })),
+    };
+  }
+
+  componentDidMount() {
+    this.onScroll = () => {
+      const y = window.scrollY || document.documentElement.scrollTop;
+      const scrolled = y > 40;
+      if (scrolled !== this.state.scrolled) this.setState({ scrolled });
+    };
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+    this.onScroll();
+  }
+
+  componentWillUnmount() {
+    if (this.onScroll) window.removeEventListener("scroll", this.onScroll);
+  }
+}
+</script>
+</body>
+</html>

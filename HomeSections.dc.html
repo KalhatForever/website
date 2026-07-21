@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+@keyframes hs-rev{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){[style*="hs-rev"]{animation:none!important}}
+</style>
+</helmet>
+<div style="background:#FCFCFB;color:#16161A;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased">
+
+  <section id="services" style="border-top:1px solid #E3E1DC;padding:5.5rem 0">
+    <div style="max-width:60rem;margin:0 auto;padding:0 2rem">
+      <div data-reveal="1" style="margin-bottom:3.5rem;animation:hs-rev .7s ease both;animation-timeline:view();animation-range:entry 2% cover 26%">
+        <span style="font-size:.72rem;font-weight:400;letter-spacing:.34em;text-transform:uppercase;color:#857F76">Services</span>
+        <h2 style="font-family:'EB Garamond',Georgia,serif;font-weight:400;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.2;margin-top:.5rem;letter-spacing:-.008em">What Substrate does</h2>
+        <p style="margin-top:1.25rem;max-width:34rem;color:#55524B">Substrate takes a small number of engagements where the mandate is material and the access is at board level.</p>
+      </div>
+      <div style="border-top:1px solid #E3E1DC">
+        <sc-for list="{{ services }}" as="item" hint-placeholder-count="4">
+          <div data-reveal="1" style="border-bottom:1px solid #E3E1DC;padding:2.25rem 0;display:grid;grid-template-columns:1fr 2fr;gap:2.5rem;animation:hs-rev .7s ease both;animation-timeline:view();animation-range:entry 2% cover 26%">
+            <h3 style="font-family:'EB Garamond',Georgia,serif;font-weight:500;font-size:1.22rem;line-height:1.3">{{ item.title }}</h3>
+            <p style="color:#55524B;max-width:34rem">{{ item.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="mandates" style="border-top:1px solid #E3E1DC;padding:5.5rem 0">
+    <div style="max-width:60rem;margin:0 auto;padding:0 2rem">
+      <div data-reveal="1" style="margin-bottom:3.5rem;animation:hs-rev .7s ease both;animation-timeline:view();animation-range:entry 2% cover 26%">
+        <span style="font-size:.72rem;font-weight:400;letter-spacing:.34em;text-transform:uppercase;color:#857F76">Current mandates</span>
+        <h2 style="font-family:'EB Garamond',Georgia,serif;font-weight:400;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.2;margin-top:.5rem;letter-spacing:-.008em">Live engagements</h2>
+      </div>
+      <div style="border-top:1px solid #E3E1DC">
+        <sc-for list="{{ mandates }}" as="item" hint-placeholder-count="3">
+          <div data-reveal="1" style="border-bottom:1px solid #E3E1DC;padding:2.25rem 0;display:grid;grid-template-columns:1fr 2fr;gap:2.5rem;animation:hs-rev .7s ease both;animation-timeline:view();animation-range:entry 2% cover 26%">
+            <h3 style="font-family:'EB Garamond',Georgia,serif;font-weight:500;font-size:1.22rem;line-height:1.3">{{ item.title }}<span style="display:block;margin-top:.5rem;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#857F76">{{ item.meta }}</span></h3>
+            <p style="color:#55524B;max-width:34rem">{{ item.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="record" style="border-top:1px solid #E3E1DC;padding:5.5rem 0">
+    <div style="max-width:60rem;margin:0 auto;padding:0 2rem">
+      <div data-reveal="1" style="margin-bottom:3.5rem;animation:hs-rev .7s ease both;animation-timeline:view();animation-range:entry 2% cover 26%">
+        <span style="font-size:.72rem;font-weight:400;letter-spacing:.34em;text-transform:uppercase;color:#857F76">Track record</span>
+        <h2 style="font-family:'EB Garamond',Georgia,serif;font-weight:400;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.2;margin-top:.5rem;letter-spacing:-.008em">Twenty-five years of regulated infrastructure</h2>
+        <p style="margin-top:1.25rem;max-width:34rem;color:#55524B">The practice is built on twenty-five years operating regulated trading and settlement infrastructure, most recently at the frontier of blockchain-based FMI.</p>
+      </div>
+      <div style="border-top:1px solid #E3E1DC">
+        <sc-for list="{{ record }}" as="item" hint-placeholder-count="4">
+          <div data-reveal="1" style="border-bottom:1px solid #E3E1DC;padding:2.25rem 0;display:grid;grid-template-columns:1fr 2fr;gap:2.5rem;animation:hs-rev .7s ease both;animation-timeline:view();animation-range:entry 2% cover 26%">
+            <h3 style="font-family:'EB Garamond',Georgia,serif;font-weight:500;font-size:1.22rem;line-height:1.3">{{ item.title }}<span style="display:block;margin-top:.5rem;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#857F76">{{ item.meta }}</span></h3>
+            <p style="color:#55524B;max-width:34rem">{{ item.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="principal" style="border-top:1px solid #E3E1DC;padding:5.5rem 0">
+    <div style="max-width:60rem;margin:0 auto;padding:0 2rem">
+      <div data-reveal="1" style="margin-bottom:3.5rem;animation:hs-rev .7s ease both;animation-timeline:view();animation-range:entry 2% cover 26%">
+        <span style="font-size:.72rem;font-weight:400;letter-spacing:.34em;text-transform:uppercase;color:#857F76">The principal</span>
+        <h2 style="font-family:'EB Garamond',Georgia,serif;font-weight:400;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.2;margin-top:.5rem;letter-spacing:-.008em">David Newns</h2>
+      </div>
+      <div data-reveal="1" style="display:grid;grid-template-columns:14rem 1fr;gap:3.5rem;align-items:start;animation:hs-rev .7s ease both;animation-timeline:view();animation-range:entry 2% cover 26%">
+        <img src="headshot.png" alt="David Newns" style="width:100%;height:auto;display:block;filter:saturate(.9)">
+        <p style="color:#55524B;max-width:34rem">David Newns has spent his career building and running regulated electronic trading and settlement infrastructure. As CEO of SIX Digital Exchange he was the first executive globally to lead a fully regulated end-to-end digital asset platform spanning issuance, trading, custody and settlement, recognised by FINMA as a key person subject to fit-and-proper approval. Before SDX he spent two decades at State Street and Currenex scaling institutional FX venues to global market leadership. He holds an MA from the University of Cambridge and works with clients across the UK, Europe, Switzerland and Asia.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="border-top:1px solid #E3E1DC;padding:5.5rem 0">
+    <div style="max-width:60rem;margin:0 auto;padding:0 2rem">
+      <div data-reveal="1" style="margin-bottom:3.5rem;animation:hs-rev .7s ease both;animation-timeline:view();animation-range:entry 2% cover 26%">
+        <span style="font-size:.72rem;font-weight:400;letter-spacing:.34em;text-transform:uppercase;color:#857F76">Contact</span>
+        <h2 style="font-family:'EB Garamond',Georgia,serif;font-weight:400;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.2;margin-top:.5rem;letter-spacing:-.008em">Substrate Advisory takes a limited number of engagements.</h2>
+      </div>
+      <div data-reveal="1" style="animation:hs-rev .7s ease both;animation-timeline:view();animation-range:entry 2% cover 26%">
+        <div style="display:flex;flex-wrap:wrap;gap:2.5rem;align-items:center">
+          <a href="#" style="display:inline-block;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:#16161A;text-decoration:none;border-bottom:1px solid #16161A;padding-bottom:.35rem">Request a meeting</a>
+          <a href="#" style="font-family:'EB Garamond',Georgia,serif;font-size:1.15rem;color:#16161A;text-decoration:none;border-bottom:1px solid #E3E1DC;padding-bottom:.25rem">david@substrate-advisory.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid #E3E1DC;padding:3rem 0 4rem">
+    <div style="max-width:60rem;margin:0 auto;padding:0 2rem">
+      <p style="font-size:.78rem;line-height:1.8;color:#857F76;max-width:38rem">Substrate Advisory is the trading name of Substrate Ltd, registered in England and Wales, company number 16939421. Registered office: 3 Copse Way, Cambridge CB2 8BJ.</p>
+      <p style="font-size:.78rem;line-height:1.8;color:#857F76;max-width:38rem;margin-top:.75rem">&copy; Substrate Ltd 2026.</p>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1040px&quot;,&quot;height&quot;:&quot;800px&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      services: [
+        { title: "Strategic advisory to FMI operators and their boards", body: "Strategy, operating model and governance for exchanges, CSDs and post-trade infrastructure, including the build and authorisation of new venues." },
+        { title: "Digital asset and tokenisation strategy for regulated institutions", body: "Issuance, settlement and custody architecture, platform and vendor selection, and the commercial case for moving regulated activity on chain." },
+        { title: "Regulatory engagement support", body: "Authorisation strategy, supervisory dialogue and policy response. Substrate advises regulated institutions moving into digital assets, crypto-native firms entering the regulatory perimeter, and the authorities supervising both." },
+        { title: "Independent board roles", body: "Non-executive and advisory appointments at regulated market infrastructure and digital asset firms." },
+      ],
+      mandates: [
+        { title: "Axiology", meta: "Independent Non-Executive Director", body: "Axiology is one of four authorised DLT Trading and Settlement Systems under the EU DLT Pilot Regime, regulated by the Bank of Lithuania and supervised by ESMA." },
+        { title: "BPX Markets", meta: "Advisor", body: "BPX is an FCA-authorised Multilateral Trading Facility and the only FCA-authorised venue to have passed Gate 1 of the Bank of England and FCA Digital Securities Sandbox." },
+        { title: "Regulatory advisory", meta: "European financial services regulator", body: "Advising the executive and supervisory boards of a European financial services regulator on digital asset market structure and the supervision of frontier technology." },
+      ],
+      record: [
+        { title: "SIX Digital Exchange", meta: "Chief Executive Officer · 2021 to 2026", body: "Led the world's first fully regulated blockchain-based exchange and central securities depository, licensed by FINMA. Directed the issuance of more than CHF 2.4 billion in digital securities, the first digital bond issuance on regulated FMI, and the first securities settlement in wholesale central bank digital currency in production." },
+        { title: "AsiaNext", meta: "Chair and Board Director · 2023 to 2025", body: "Board director and rotating Chair of the MAS-regulated institutional crypto derivatives exchange in Singapore, a joint venture of SIX Group and SBI Digital Asset Holdings, live in 2024 with 24/7 trading in calendar and perpetual futures." },
+        { title: "State Street", meta: "Senior Managing Director · 2007 to 2021", body: "Ran Currenex and FXConnect globally, ranked the largest multi-dealer FX platform in Euromoney's 2021 survey. CEO of two MiFID II Multilateral Trading Facilities and a CFTC-registered Swap Execution Facility." },
+        { title: "Industry and regulatory engagement", meta: "", body: "Contributor to work at IOSCO, the OECD, the Financial Markets Standards Board, the Global Blockchain Business Council and the FX Professionals Association." },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

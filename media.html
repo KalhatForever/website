@@ -1,491 +1,148 @@
 <!DOCTYPE html>
-
-<html lang="en-GB">
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Media &middot; Substrate Advisory</title>
-<meta name="description" content="Selected interviews, panels and broadcasts featuring David Newns on wholesale CBDC, tokenisation, market structure and digital asset custody.">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:light}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{
-  background:#FCFCFB;
-  color:#16161A;
-  font-family:IBM Plex Sans,system-ui,sans-serif;
-  font-size:17px;
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-}
-.wrap{max-width:60rem;margin:0 auto;padding:0 2rem}
-
-.eyebrow{
-font-family:IBM Plex Sans,system-ui,sans-serif;
-font-size:.72rem;
-font-weight:400;
-letter-spacing:.34em;
-text-transform:uppercase;
-color:#857F76;
-}
-
-/* masthead */
-.masthead{padding:3.5rem 0 0}
-.mark{display:block;text-decoration:none;color:inherit;width:max-content}
-.mark .word{font-family:EB Garamond,Georgia,serif;font-size:2rem;line-height:1;letter-spacing:-.005em}
-.mark .eyebrow{display:block;margin-top:.45rem;padding-left:.2em;font-size:.62rem;letter-spacing:.42em}
-
-nav{margin-top:2.75rem;border-top:1px solid #E3E1DC;border-bottom:1px solid #E3E1DC}
-nav ul{display:flex;flex-wrap:wrap;gap:2rem;list-style:none;padding:.85rem 0}
-nav a{
-font-size:.8rem;letter-spacing:.06em;color:#55524B;
-text-decoration:none;transition:color .2s ease;
-}
-nav a:hover,nav a:focus-visible{color:#16161A}
-nav a[aria-current=page]{color:#16161A}
-
-/* page head */
-.pagehead{padding:5.5rem 0 5rem}
-.pagehead h1{
-font-family:EB Garamond,Georgia,serif;
-font-weight:400;
-font-size:clamp(2rem,4vw,2.9rem);
-line-height:1.18;
-letter-spacing:-.01em;
-margin-top:.5rem;
-max-width:24ch;
-}
-.pagehead p{margin-top:1.5rem;max-width:34rem;color:#55524B;font-size:1.02rem}
-
-.link{
-display:inline-block;
-font-size:.82rem;
-letter-spacing:.14em;
-text-transform:uppercase;
-color:#16161A;
-text-decoration:none;
-border-bottom:1px solid #16161A;
-padding-bottom:.35rem;
-transition:opacity .2s ease;
-}
-.link:hover,.link:focus-visible{opacity:.55}
-
-/* sections */
-section{border-top:1px solid #E3E1DC;padding:5.5rem 0}
-.head{margin-bottom:3.5rem}
-.head h2{
-font-family:EB Garamond,Georgia,serif;
-font-weight:400;
-font-size:clamp(1.6rem,2.6vw,2.1rem);
-line-height:1.2;
-margin-top:.5rem;
-letter-spacing:-.008em;
-}
-.standfirst{margin-top:1.25rem;max-width:34rem;color:#55524B}
-
-/* entries */
-.entries{border-top:1px solid #E3E1DC}
-.entry{
-border-bottom:1px solid #E3E1DC;
-padding:2.25rem 0;
-display:grid;
-grid-template-columns:1fr 2fr;
-gap:2.5rem;
-}
-.entry h3{
-font-family:EB Garamond,Georgia,serif;
-font-weight:500;
-font-size:1.22rem;
-line-height:1.3;
-}
-.entry .meta{
-display:block;
-margin-top:.5rem;
-font-family:IBM Plex Sans,system-ui,sans-serif;
-font-size:.72rem;
-letter-spacing:.16em;
-text-transform:uppercase;
-color:#857F76;
-}
-.entry p{color:#55524B;max-width:34rem}
-.entry .out{margin-top:1.5rem}
-
-/* video facade */
-.video{
-position:relative;
-margin-top:1.5rem;
-aspect-ratio:16/9;
-max-width:34rem;
-background:#E3E1DC;
-overflow:hidden;
-}
-.video img{
-position:absolute;inset:0;
-width:100%;height:100%;
-object-fit:cover;display:block;
-filter:saturate(.85);
-transition:filter .3s ease;
-}
-.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.video button{
-position:absolute;inset:0;
-width:100%;height:100%;
-background:transparent;
-border:0;cursor:pointer;
-display:flex;align-items:center;justify-content:center;
-}
-.video button .pb-circle{
-width:3.4rem;height:3.4rem;
-border-radius:50%;
-background:#FCFCFB;
-border:1px solid #E3E1DC;
-transition:transform .2s ease;
-}
-.video button .pb-tri{
-position:absolute;
-width:0;height:0;
-border-style:solid;
-border-width:.5rem 0 .5rem .85rem;
-border-color:transparent transparent transparent #16161A;
-margin-left:.15rem;
-}
-.video button:hover .pb-circle,.video button:focus-visible .pb-circle{transform:scale(1.08)}
-.video button:hover~img{filter:saturate(1)}
-.video button:focus-visible{outline:2px solid #16161A;outline-offset:-2px}
-
-/* footer */
-footer{border-top:1px solid #E3E1DC;padding:3rem 0 4rem}
-footer p{font-size:.78rem;line-height:1.8;color:#857F76;max-width:38rem}
-footer p+p{margin-top:.75rem}
-
-a:focus-visible,nav a:focus-visible{outline:2px solid #16161A;outline-offset:4px;border-radius:1px}
-
-/* reveal */
-.reveal{opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
-
-@media (max-width:780px){
-.wrap{padding:0 1.5rem}
-.pagehead{padding:4rem 0 3.5rem}
-section{padding:4rem 0}
-.head{margin-bottom:2.5rem}
-.entry{grid-template-columns:1fr;gap:1rem;padding:2rem 0}
-nav ul{gap:1.25rem}
-}
+@keyframes hs-rev{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes om-rulex{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){[style*="hs-rev"],[style*="om-rulex"]{animation:none!important}}
 </style>
+</helmet>
+<div style="background:#FCFCFB;color:#16161A;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased">
 
-</head>
-<body>
+  <dc-import name="Masthead" current="media" hint-size="100%,150px"></dc-import>
 
-<header class="masthead">
-  <div class="wrap">
-    <a class="mark" href="index.html">
-      <span class="word">Substrate</span>
-      <span class="eyebrow">Advisory</span>
-    </a>
-    <nav>
-      <ul>
-        <li><a href="index.html#services">Services</a></li>
-        <li><a href="index.html#mandates">Current mandates</a></li>
-        <li><a href="index.html#record">Track record</a></li>
-        <li><a href="reports.html">Reports</a></li>
-        <li><a href="index.html#principal">The principal</a></li>
-        <li><a href="media.html" aria-current="page">Media</a></li>
-        <li><a href="press.html">In the press</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-  <div class="pagehead">
-    <div class="wrap reveal">
-      <span class="eyebrow">Media</span>
-      <h1>Selected appearances</h1>
-      <p>Interviews, panels and broadcasts on wholesale CBDC, tokenisation, market structure and digital asset custody, recorded between 2022 and 2025. Recordings hosted elsewhere are linked at the publisher.</p>
-    </div>
-  </div>
-
-  <section id="featured">
-    <div class="wrap">
-      <div class="head reveal">
-        <span class="eyebrow">Featured</span>
-        <h2>Six to start with</h2>
+  <main>
+    <div style="padding:5.5rem 0 5rem"><div style="max-width:60rem;margin:0 auto;padding:0 2rem">
+      <div style="animation:hs-rev .8s ease .05s both">
+        <span style="font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:#857F76">Media</span>
+        <h1 style="font-family:'EB Garamond',Georgia,serif;font-weight:400;font-size:clamp(2rem,4vw,2.9rem);line-height:1.18;letter-spacing:-.01em;margin-top:.5rem;max-width:24ch">Selected appearances</h1>
+        <div style="height:1px;background:#16161A;width:5rem;margin-top:1.5rem;transform-origin:left;animation:om-rulex .9s ease .35s both"></div>
+        <p style="margin-top:1.5rem;max-width:34rem;color:#55524B;font-size:1.02rem">Interviews, panels and broadcasts on wholesale CBDC, tokenisation, market structure and digital asset custody, recorded between 2022 and 2025. Recordings hosted elsewhere are linked at the publisher.</p>
       </div>
-      <div class="entries reveal">
+    </div></div>
 
-```
-    <div class="entry">
-      <div>
-        <h3>Revolutionizing Finance</h3>
-        <span class="meta">Chainlink &middot; 11th January 2024 &middot; Interview</span>
-      </div>
-      <div>
-        <p>Blockchain use cases in traditional finance, institutional adoption and interoperability, recorded around the SmartCon 2023 Swift and CCIP demonstration.</p>
-        <div class="video" data-id="Ip9_iQKsV28">
-          <img src="https://i.ytimg.com/vi/Ip9_iQKsV28/hqdefault.jpg" alt="" loading="lazy">
-          <button type="button" aria-label="Play: Revolutionizing Finance, Chainlink interview with David Newns"><span class="pb-circle"></span><span class="pb-tri"></span></button>
+    <sc-for list="{{ sections }}" as="sec" hint-placeholder-count="4">
+      <section style="border-top:1px solid #E3E1DC;padding:5.5rem 0">
+        <div style="max-width:60rem;margin:0 auto;padding:0 2rem">
+          <div style="margin-bottom:3.5rem;animation:hs-rev .7s ease both;animation-timeline:view();animation-range:entry 2% cover 24%">
+            <span style="font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:#857F76">{{ sec.eyebrow }}</span>
+            <h2 style="font-family:'EB Garamond',Georgia,serif;font-weight:400;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.2;margin-top:.5rem;letter-spacing:-.008em">{{ sec.title }}</h2>
+          </div>
+          <div style="border-top:1px solid #E3E1DC">
+            <sc-for list="{{ sec.entries }}" as="e" hint-placeholder-count="3">
+              <div style="border-bottom:1px solid #E3E1DC;padding:2.25rem 0;display:grid;grid-template-columns:1fr 2fr;gap:2.5rem;animation:hs-rev .7s ease both;animation-timeline:view();animation-range:entry 2% cover 22%">
+                <div>
+                  <h3 style="font-family:'EB Garamond',Georgia,serif;font-weight:500;font-size:1.22rem;line-height:1.3">{{ e.title }}</h3>
+                  <span style="display:block;margin-top:.5rem;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#857F76">{{ e.meta }}</span>
+                </div>
+                <div>
+                  <p style="color:#55524B;max-width:34rem">{{ e.body }}</p>
+                  <sc-if value="{{ e.hasVideo }}" hint-placeholder-val="{{ true }}">
+                    <div style="position:relative;margin-top:1.5rem;aspect-ratio:16/9;max-width:34rem;background:#E3E1DC;overflow:hidden">
+                      <sc-if value="{{ e.playing }}">
+                        <iframe src="{{ e.embed }}" title="{{ e.title }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>
+                      </sc-if>
+                      <sc-if value="{{ e.notPlaying }}" hint-placeholder-val="{{ true }}">
+                        <img src="{{ e.thumb }}" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85)">
+                        <button type="button" onClick="{{ e.play }}" aria-label="Play {{ e.title }}" style="position:absolute;inset:0;width:100%;height:100%;background:transparent;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center">
+                          <span style="width:3.4rem;height:3.4rem;border-radius:50%;background:#FCFCFB;border:1px solid #E3E1DC;display:block"></span>
+                          <span style="position:absolute;width:0;height:0;border-style:solid;border-width:.5rem 0 .5rem .85rem;border-color:transparent transparent transparent #16161A;margin-left:.15rem"></span>
+                        </button>
+                      </sc-if>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ e.hasOut }}">
+                    <div style="margin-top:1.5rem"><a href="{{ e.outUrl }}" target="_blank" rel="noopener" style="display:inline-block;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:#16161A;text-decoration:none;border-bottom:1px solid #16161A;padding-bottom:.35rem">{{ e.outLabel }}</a></div>
+                  </sc-if>
+                </div>
+              </div>
+            </sc-for>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </sc-for>
+  </main>
 
-    <div class="entry">
-      <div>
-        <h3>Project Helvetia III: Settling Tokenised Assets with a Wholesale CBDC</h3>
-        <span class="meta">FNA CBDC Broadcast &middot; 10th April 2024 &middot; Panel</span>
-      </div>
-      <div>
-        <p>The liquidity management implications of settling tokenised assets in wholesale CBDC, with Thomas Moser of the Swiss National Bank.</p>
-        <div class="video" data-id="v3twgEdf4gM">
-          <img src="https://i.ytimg.com/vi/v3twgEdf4gM/hqdefault.jpg" alt="" loading="lazy">
-          <button type="button" aria-label="Play: FNA CBDC Broadcast on Project Helvetia III with David Newns and Thomas Moser"><span class="pb-circle"></span><span class="pb-tri"></span></button>
-        </div>
-      </div>
+  <footer style="border-top:1px solid #E3E1DC;padding:3rem 0 4rem">
+    <div style="max-width:60rem;margin:0 auto;padding:0 2rem">
+      <p style="font-size:.78rem;line-height:1.8;color:#857F76;max-width:38rem">Substrate Advisory is the trading name of Substrate Ltd, registered in England and Wales, company number 16939421. Registered office: 3 Copse Way, Cambridge CB2 8BJ.</p>
+      <p style="font-size:.78rem;line-height:1.8;color:#857F76;max-width:38rem;margin-top:.75rem">&copy; Substrate Ltd 2026.</p>
     </div>
+  </footer>
 
-    <div class="entry">
-      <div>
-        <h3>Spot On: David Newns, Part 2</h3>
-        <span class="meta">RULEMATCH &middot; 14th August 2024 &middot; Podcast</span>
-      </div>
-      <div>
-        <p>The foundations for fully digital capital markets, wholesale CBDC integration and Switzerland's leading role, with Ian Simpson.</p>
-        <div class="video" data-id="88eh9wpk5Rw">
-          <img src="https://i.ytimg.com/vi/88eh9wpk5Rw/hqdefault.jpg" alt="" loading="lazy">
-          <button type="button" aria-label="Play: RULEMATCH Spot On with David Newns, Part 2"><span class="pb-circle"></span><span class="pb-tri"></span></button>
-        </div>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div>
-        <h3>Modernising Financial Markets with Wholesale CBDC</h3>
-        <span class="meta">SDX Lakeside Chats &middot; 24th April 2024 &middot; Interview</span>
-      </div>
-      <div>
-        <p>The World Economic Forum's April 2024 report on wholesale CBDC and its case study on SIX Digital Exchange.</p>
-        <div class="video" data-id="_9mPDLT1UHU">
-          <img src="https://i.ytimg.com/vi/_9mPDLT1UHU/hqdefault.jpg" alt="" loading="lazy">
-          <button type="button" aria-label="Play: SDX Lakeside Chats on modernising financial markets with wholesale CBDC"><span class="pb-circle"></span><span class="pb-tri"></span></button>
-        </div>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div>
-        <h3>The Role of FMIs in Bridging Traditional and Tokenised Markets</h3>
-        <span class="meta">SDX Lakeside Chats &middot; September 2024 &middot; Interview</span>
-      </div>
-      <div>
-        <p>How financial market infrastructure connects traditional and tokenised markets and scales access to digital securities.</p>
-        <div class="video" data-id="GGH3rwtLnk8">
-          <img src="https://i.ytimg.com/vi/GGH3rwtLnk8/hqdefault.jpg" alt="" loading="lazy">
-          <button type="button" aria-label="Play: SDX interview on the role of FMIs in bridging traditional and tokenised markets"><span class="pb-circle"></span><span class="pb-tri"></span></button>
-        </div>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div>
-        <h3>Get Ahead of the Curve in Digital Capital Markets</h3>
-        <span class="meta">FINTECH.TV &middot; May 2022 &middot; Interview</span>
-      </div>
-      <div>
-        <p>Crypto versus decentralised FMI, an overview of DLT in capital markets and takeaways from WEF Davos 2022. Hosted at the publisher.</p>
-        <div class="out"><a class="link" href="https://fintech.tv/get-ahead-of-the-curve-in-digital-capital-markets-with-david-newns-of-sdx/" target="_blank" rel="noopener">Watch at FINTECH.TV</a></div>
-      </div>
-    </div>
-
-  </div>
 </div>
-```
-
-  </section>
-
-  <section id="tokenisation">
-    <div class="wrap">
-      <div class="head reveal">
-        <span class="eyebrow">Tokenisation and digital securities</span>
-        <h2>Issuance, settlement and the tokenised market</h2>
-      </div>
-      <div class="entries reveal">
-
-```
-    <div class="entry">
-      <div>
-        <h3>Impact of Digital Assets on Financial Services</h3>
-        <span class="meta">Point Zero Forum &middot; 2nd July 2024 &middot; Panel</span>
-      </div>
-      <div>
-        <p>With Johnna Powell (DTCC), Pradyumna Agrawal (Temasek), Umar Farooq (Onyx by J.P. Morgan) and Sopnendu Mohanty (MAS, moderator). Recording held by the conference.</p>
-        <div class="out"><a class="link" href="https://www.pointzeroforum.com/speakers-2024/spkr2460-david-newns" target="_blank" rel="noopener">View at Point Zero Forum</a></div>
-      </div>
-    </div>
-
-  </div>
-</div>
-```
-
-  </section>
-
-  <section id="market-structure">
-    <div class="wrap">
-      <div class="head reveal">
-        <span class="eyebrow">Market structure and institutional adoption</span>
-        <h2>Regulation, interoperability and adoption</h2>
-      </div>
-      <div class="entries reveal">
-
-```
-    <div class="entry">
-      <div>
-        <h3>The Inception of AsiaNext</h3>
-        <span class="meta">AsiaNext &middot; April 2024 &middot; Panel</span>
-      </div>
-      <div>
-        <p>The founding story of the MAS-regulated institutional crypto derivatives exchange, with Neil Thomas, Fernando Vazquez Cao, Jochen Duerr and Marek Socha. Hosted on LinkedIn.</p>
-        <div class="out"><a class="link" href="https://www.linkedin.com/posts/asianext-by-sbi-and-six_the-inception-of-asianext-activity-7180771985214390272-ELzn" target="_blank" rel="noopener">Watch on LinkedIn</a></div>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div>
-        <h3>Interoperability and Regulatory Compliance: Building the Future of Digital Asset Infrastructure</h3>
-        <span class="meta">Point Zero Forum &middot; 27th June 2023 &middot; Panel</span>
-      </div>
-      <div>
-        <p>Next-generation settlement and interoperability, with Fernando Vazquez Cao (SBI DAH), Mathias Imbach (Sygnum), Umar Farooq (Onyx by J.P. Morgan) and Tara Rice (BIS CPMI, moderator). Recording held by the conference.</p>
-        <div class="out"><a class="link" href="https://six.swiss/3qmPg4X" target="_blank" rel="noopener">View at Point Zero Forum</a></div>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div>
-        <h3>How Financial Institutions Are Getting Involved in Digital Assets</h3>
-        <span class="meta">SDX Lakeside Chats &middot; 7th November 2022 &middot; Interview</span>
-      </div>
-      <div>
-        <p>How banks and other financial institutions are entering the digital asset and crypto ecosystems.</p>
-        <div class="video" data-id="NhSS_yUDIFU">
-          <img src="https://i.ytimg.com/vi/NhSS_yUDIFU/hqdefault.jpg" alt="" loading="lazy">
-          <button type="button" aria-label="Play: SDX Lakeside Chats episode 8 with David Newns"><span class="pb-circle"></span><span class="pb-tri"></span></button>
-        </div>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div>
-        <h3>SDX Within Current Digital Asset and Crypto Trends</h3>
-        <span class="meta">SDX Lakeside Chats &middot; 26th September 2022 &middot; Interview</span>
-      </div>
-      <div>
-        <p>How SIX Digital Exchange is positioned within the digital asset and cryptocurrency landscape of 2022.</p>
-        <div class="video" data-id="RiC7g-9nevc">
-          <img src="https://i.ytimg.com/vi/RiC7g-9nevc/hqdefault.jpg" alt="" loading="lazy">
-          <button type="button" aria-label="Play: SDX Lakeside Chats episode 4 with David Newns"><span class="pb-circle"></span><span class="pb-tri"></span></button>
-        </div>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div>
-        <h3>Unlocking Crypto Liquidity</h3>
-        <span class="meta">Point Zero Forum &middot; 22nd June 2022 &middot; Panel</span>
-      </div>
-      <div>
-        <p>Crypto liquidity as a building block for tokenisation, with Darius Sit (QCP), Dmitry Tokarev (Copper), Sir Jon Cunliffe (Bank of England) and Charles McGarraugh (Blockchain.com). Recording held by the conference.</p>
-        <div class="out"><a class="link" href="https://x.com/pointzeroforum/status/1539560281416024064" target="_blank" rel="noopener">View at Point Zero Forum</a></div>
-      </div>
-    </div>
-
-  </div>
-</div>
-```
-
-  </section>
-
-  <section id="custody">
-    <div class="wrap">
-      <div class="head reveal">
-        <span class="eyebrow">Custody and collateral</span>
-        <h2>Safekeeping and collateral mobilisation</h2>
-      </div>
-      <div class="entries reveal">
-
-```
-    <div class="entry">
-      <div>
-        <h3>Spot On: Winter Edition, St Moritz</h3>
-        <span class="meta">RULEMATCH &middot; January 2025 &middot; Interview</span>
-      </div>
-      <div>
-        <p>Why custody and collateral management matter for institutional digital asset trading, recorded at the Crypto Finance Conference in St Moritz.</p>
-        <div class="video" data-id="bf6pQxF52Ng">
-          <img src="https://i.ytimg.com/vi/bf6pQxF52Ng/hqdefault.jpg" alt="" loading="lazy">
-          <button type="button" aria-label="Play: RULEMATCH Spot On Winter Edition with David Newns"><span class="pb-circle"></span><span class="pb-tri"></span></button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-```
-
-  </section>
-
-</main>
-
-<footer>
-  <div class="wrap">
-    <p>Substrate Advisory is the trading name of Substrate Ltd, registered in England and Wales, company number 16939421. Registered office: 3 Copse Way, Cambridge CB2 8BJ.</p>
-    <p>&copy; Substrate Ltd 2026.</p>
-  </div>
-</footer>
-
-<script>
-(function(){
-  var els=document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    els.forEach(function(e){e.classList.add('in')});
-  }else{
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}
-      });
-    },{rootMargin:'0px 0px -8% 0px'});
-    els.forEach(function(e){io.observe(e)});
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1040px&quot;,&quot;height&quot;:&quot;900px&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { playing: {} };
+    this.data = [
+      { eyebrow: "Featured", title: "Six to start with", entries: [
+        { title: "Revolutionizing Finance", meta: "Chainlink · 11th January 2024 · Interview", body: "Blockchain use cases in traditional finance, institutional adoption and interoperability, recorded around the SmartCon 2023 Swift and CCIP demonstration.", videoId: "Ip9_iQKsV28" },
+        { title: "Project Helvetia III: Settling Tokenised Assets with a Wholesale CBDC", meta: "FNA CBDC Broadcast · 10th April 2024 · Panel", body: "The liquidity management implications of settling tokenised assets in wholesale CBDC, with Thomas Moser of the Swiss National Bank.", videoId: "v3twgEdf4gM" },
+        { title: "Spot On: David Newns, Part 2", meta: "RULEMATCH · 14th August 2024 · Podcast", body: "The foundations for fully digital capital markets, wholesale CBDC integration and Switzerland's leading role, with Ian Simpson.", videoId: "88eh9wpk5Rw" },
+        { title: "Modernising Financial Markets with Wholesale CBDC", meta: "SDX Lakeside Chats · 24th April 2024 · Interview", body: "The World Economic Forum's April 2024 report on wholesale CBDC and its case study on SIX Digital Exchange.", videoId: "_9mPDLT1UHU" },
+        { title: "The Role of FMIs in Bridging Traditional and Tokenised Markets", meta: "SDX Lakeside Chats · September 2024 · Interview", body: "How financial market infrastructure connects traditional and tokenised markets and scales access to digital securities.", videoId: "GGH3rwtLnk8" },
+        { title: "Get Ahead of the Curve in Digital Capital Markets", meta: "FINTECH.TV · May 2022 · Interview", body: "Crypto versus decentralised FMI, an overview of DLT in capital markets and takeaways from WEF Davos 2022. Hosted at the publisher.", outUrl: "https://fintech.tv/get-ahead-of-the-curve-in-digital-capital-markets-with-david-newns-of-sdx/", outLabel: "Watch at FINTECH.TV" },
+      ]},
+      { eyebrow: "Tokenisation and digital securities", title: "Issuance, settlement and the tokenised market", entries: [
+        { title: "Impact of Digital Assets on Financial Services", meta: "Point Zero Forum · 2nd July 2024 · Panel", body: "With Johnna Powell (DTCC), Pradyumna Agrawal (Temasek), Umar Farooq (Onyx by J.P. Morgan) and Sopnendu Mohanty (MAS, moderator). Recording held by the conference.", outUrl: "https://www.pointzeroforum.com/speakers-2024/spkr2460-david-newns", outLabel: "View at Point Zero Forum" },
+      ]},
+      { eyebrow: "Market structure and institutional adoption", title: "Regulation, interoperability and adoption", entries: [
+        { title: "The Inception of AsiaNext", meta: "AsiaNext · April 2024 · Panel", body: "The founding story of the MAS-regulated institutional crypto derivatives exchange, with Neil Thomas, Fernando Vazquez Cao, Jochen Duerr and Marek Socha. Hosted on LinkedIn.", outUrl: "https://www.linkedin.com/posts/asianext-by-sbi-and-six_the-inception-of-asianext-activity-7180771985214390272-ELzn", outLabel: "Watch on LinkedIn" },
+        { title: "Interoperability and Regulatory Compliance: Building the Future of Digital Asset Infrastructure", meta: "Point Zero Forum · 27th June 2023 · Panel", body: "Next-generation settlement and interoperability, with Fernando Vazquez Cao (SBI DAH), Mathias Imbach (Sygnum), Umar Farooq (Onyx by J.P. Morgan) and Tara Rice (BIS CPMI, moderator). Recording held by the conference.", outUrl: "https://six.swiss/3qmPg4X", outLabel: "View at Point Zero Forum" },
+        { title: "How Financial Institutions Are Getting Involved in Digital Assets", meta: "SDX Lakeside Chats · 7th November 2022 · Interview", body: "How banks and other financial institutions are entering the digital asset and crypto ecosystems.", videoId: "NhSS_yUDIFU" },
+        { title: "SDX Within Current Digital Asset and Crypto Trends", meta: "SDX Lakeside Chats · 26th September 2022 · Interview", body: "How SIX Digital Exchange is positioned within the digital asset and cryptocurrency landscape of 2022.", videoId: "RiC7g-9nevc" },
+        { title: "Unlocking Crypto Liquidity", meta: "Point Zero Forum · 22nd June 2022 · Panel", body: "Crypto liquidity as a building block for tokenisation, with Darius Sit (QCP), Dmitry Tokarev (Copper), Sir Jon Cunliffe (Bank of England) and Charles McGarraugh (Blockchain.com). Recording held by the conference.", outUrl: "https://x.com/pointzeroforum/status/1539560281416024064", outLabel: "View at Point Zero Forum" },
+      ]},
+      { eyebrow: "Custody and collateral", title: "Safekeeping and collateral mobilisation", entries: [
+        { title: "Spot On: Winter Edition, St Moritz", meta: "RULEMATCH · January 2025 · Interview", body: "Why custody and collateral management matter for institutional digital asset trading, recorded at the Crypto Finance Conference in St Moritz.", videoId: "bf6pQxF52Ng" },
+      ]},
+    ];
   }
 
-  document.querySelectorAll('.video').forEach(function(v){
-    var btn=v.querySelector('button');
-    if(!btn)return;
-    btn.addEventListener('click',function(){
-      var id=v.getAttribute('data-id');
-      var label=btn.getAttribute('aria-label')||'Video';
-      var f=document.createElement('iframe');
-      f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
-      f.title=label.replace(/^Play: /,'');
-      f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-      f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
-      f.setAttribute('allowfullscreen','');
-      v.innerHTML='';
-      v.appendChild(f);
-      f.focus();
-    });
-  });
-})();
-</script>
+  play(id) {
+    this.setState((s) => ({ playing: { ...s.playing, [id]: true } }));
+  }
 
+  renderVals() {
+    const playing = this.state.playing;
+    return {
+      sections: this.data.map((sec) => ({
+        eyebrow: sec.eyebrow,
+        title: sec.title,
+        entries: sec.entries.map((e) => {
+          const isPlaying = e.videoId ? !!playing[e.videoId] : false;
+          return {
+            title: e.title,
+            meta: e.meta,
+            body: e.body,
+            hasVideo: !!e.videoId,
+            hasOut: !!e.outUrl,
+            outUrl: e.outUrl || "",
+            outLabel: e.outLabel || "",
+            thumb: e.videoId ? "https://i.ytimg.com/vi/" + e.videoId + "/hqdefault.jpg" : "",
+            embed: e.videoId ? "https://www.youtube-nocookie.com/embed/" + e.videoId + "?autoplay=1&rel=0" : "",
+            playing: isPlaying,
+            notPlaying: e.videoId ? !isPlaying : false,
+            play: e.videoId ? () => this.play(e.videoId) : null,
+          };
+        }),
+      })),
+    };
+  }
+}
+</script>
 </body>
 </html>
